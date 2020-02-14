@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--
+        android:checkable Boolean. "true" if the item is checkable.
+        android:checked Boolean. "true" if the item is checked by default.
+    -->
+    <item
+        android:id="@+id/actionValveAssignment"
+        android:title="Edit Valve Assignment"
+        app:showAsAction="never"
+        android:orderInCategory="5"
+        android:checkable="true"
+        />
+</menu>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data >
+        <import type="java.util.ArrayList"/>
+        <variable
+            name="schedule"
+            type="com.ve.irrigation.datavalues.Schedule"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/paddingMeduim"
+        android:layout_marginTop="@dimen/marginMeduim"
+        android:background="@drawable/bg_schedule_values">
+        <TextView
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtScheduleId"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@{schedule.scheduleName}"
+            />
+        <TextView
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtStartTime"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@{schedule.startTime}"
+            />
+        <TextView
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtEndTime"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@{schedule.stopTime}"
+            />
+
+        <RadioButton
+            style="@style/RadioButtonStyle"
+            android:id="@+id/radioEnable"
+            android:layout_width="@dimen/sizeIndiConnection"
+            android:layout_height="@dimen/sizeIndiConnection"
+            android:background="@drawable/selector_main_scr_idicator"
+            android:checked="@{!schedule.disable}"
+            android:layout_marginLeft="@dimen/marginLarge"
+            android:layout_marginRight="@dimen/marginLarge"
+            android:clickable="false"
+            />
+
+        <CheckBox
+            style="@style/RadioButtonStyle"
+            android:id="@+id/radioNutritionStauts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/switch_selector_v2"
+            android:layout_marginRight="@dimen/marginMeduim"
+            android:checked="@{schedule.statusNutrition}"
+            />
+    </LinearLayout>
+</layout>

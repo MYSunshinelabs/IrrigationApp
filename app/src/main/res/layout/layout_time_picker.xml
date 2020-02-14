@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+
+    android:layout_height="150dp"
+    android:padding="@dimen/paddingMeduim"
+    >
+
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_time_picker_btn"
+        >
+        <com.ve.irrigation.customview.CustomTextViewLight
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtPlusHours"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="+"
+            android:textSize="@dimen/textSizeLarg"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/strokeBlack"/>
+        <com.ve.irrigation.customview.CustomTextViewLight
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtHour"
+            android:text="12"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/strokeBlack"/>
+
+        <com.ve.irrigation.customview.CustomTextViewLight
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtMinuseHours"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="-"
+            android:textSize="@dimen/textSizeLarg"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/marginMeduim"
+        android:background="@drawable/bg_time_picker_btn"
+        >
+        <com.ve.irrigation.customview.CustomTextViewLight
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtPlusMinute"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="+"
+            android:textSize="@dimen/textSizeLarg"
+            android:layout_weight="1"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/strokeBlack"/>
+        <com.ve.irrigation.customview.CustomTextViewLight
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtMinute"
+            android:layout_width="match_parent"
+            android:text="35"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/strokeBlack"/>
+
+        <com.ve.irrigation.customview.CustomTextViewLight
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtMinuseMinute"
+            android:text="-"
+            android:textSize="@dimen/textSizeLarg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/marginMeduim"
+        >
+
+        <com.ve.irrigation.customview.CustomTextViewLight
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtAMPM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AM"
+            android:padding="@dimen/marginMeduim"
+            android:layout_marginLeft="@dimen/marginMeduim"
+            android:background="@drawable/bg_time_picker_btn"
+            />
+
+        <com.ve.irrigation.customview.CustomTextViewLight
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtDoneTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:layout_marginLeft="@dimen/marginMeduim"
+            android:padding="@dimen/marginMeduim"
+            android:layout_marginTop="@dimen/marginMeduim"
+            android:background="@drawable/bg_time_picker_btn"
+            android:layout_below="@id/txtAMPM"
+            />
+    </RelativeLayout>
+</LinearLayout>

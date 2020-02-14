@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/paddingLarge"
+    android:background="@drawable/bg_valve_adv_mode"
+    tools:context="com.ve.irrigation.irrigation.activities.ValveAssignmentActivity"
+    >
+
+    <TextView
+        android:id="@+id/txtValveAssignment"
+        android:text="@string/valve_assignment"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSizeSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnSave"
+        android:layout_marginTop="@dimen/marginMeduim"
+        android:layout_above="@id/btnSave"
+        android:layout_below="@id/txtValveAssignment"
+        />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:text="save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/paddingLarge"
+        android:paddingRight="@dimen/paddingLarge"
+        android:layout_marginTop="@dimen/marginLarge"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_detail_container"
+        />
+
+    <FrameLayout
+        android:id="@+id/frameEditProtector"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</RelativeLayout>

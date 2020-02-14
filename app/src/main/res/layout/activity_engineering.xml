@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ve.irrigation.irrigation.activities.ConfigurationScreenActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_valve_adv_mode" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/relative_tool"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/backgroundGroupAdvMode"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_text">
+
+
+            <com.ve.irrigation.customview.CustomTextViewLightBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:drawableLeft="@mipmap/up_arrow"
+                android:text="Engineering Page"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_main2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout_demo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_tool"
+                android:layout_marginTop="@dimen/margin_switch"
+                android:padding="@dimen/padding_text">
+
+
+                <com.ve.irrigation.customview.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Demo Mode" />
+
+
+                <ImageView
+                    android:id="@+id/img_demo_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/margin_top"
+                    android:src="@mipmap/mode_off" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_demo"
+                android:gravity="center_vertical"
+                android:padding="@dimen/padding_text">
+
+
+                <com.ve.irrigation.customview.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Test Mode  " />
+
+
+                <ImageView
+                    android:id="@+id/img_test_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/margin_top"
+                    android:src="@mipmap/mode_on" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout_debug"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_test"
+                android:gravity="center_vertical"
+                android:padding="@dimen/padding_text">
+
+
+                <com.ve.irrigation.customview.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Debug          " />
+
+
+                <Spinner
+                    android:id="@+id/spinner_debug"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/edittext_new_height"
+                    android:layout_marginLeft="@dimen/margin_layout"
+                    android:background="@drawable/spinner_bg"
+                    android:overlapAnchor="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_test"
+                android:padding="@dimen/padding_text">
+
+                <com.ve.irrigation.customview.CustomButtonView
+                    android:id="@+id/btn_save"
+                    android:layout_width="220dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/bg_detail_container"
+                    android:padding="@dimen/padding_text"
+                    android:text="Make permanent" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_demo"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_text">
+
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Config download link  " />
+
+
+            <Spinner
+                android:id="@+id/spinner_downloadlink"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edittext_new_height"
+                android:layout_marginLeft="@dimen/margin_layout"
+                android:background="@drawable/spinner_bg"
+                android:overlapAnchor="true"
+                android:paddingRight="15dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_demo"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_text">
+
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sync the configuration data" />
+
+
+            <ImageView
+                android:id="@+id/img_sync"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/margin_top"
+                android:padding="5dp"
+                android:src="@mipmap/sync" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_test"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_text">
+
+            <com.ve.irrigation.customview.CustomButtonView
+                android:id="@+id/btn_saveconnection"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bg_detail_container"
+                android:padding="@dimen/padding_text"
+                android:text="Edit Connection" />
+
+
+            <com.ve.irrigation.customview.CustomButtonView
+                android:visibility="visible"
+                android:id="@+id/btn_connectlocalhost"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginBottom="@dimen/margin_top"
+                android:background="@drawable/bg_detail_container"
+                android:padding="@dimen/padding_text"
+                android:text="Connect a local host" />
+
+
+            <LinearLayout
+                android:id="@+id/layout_connectiont_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_test"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_text"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_test"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_text">
+
+                    <LinearLayout
+
+                        android:id="@+id/layout_connectiont_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_test"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_text">
+
+
+                        <com.ve.irrigation.customview.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Type" />
+
+
+                        <Spinner
+                            android:id="@+id/spinner_typeofconnection"
+                            android:layout_width="100dp"
+                            android:layout_height="@dimen/edittext_new_height"
+                            android:background="@drawable/spinner_bg"
+                            android:overlapAnchor="true" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_connectiont_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_test"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_text">
+
+
+                        <com.ve.irrigation.customview.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name" />
+
+                        <com.ve.irrigation.customview.CustomEditTextView
+
+                            android:id="@+id/edittext_name"
+                            android:layout_width="100dp"
+                            android:layout_height="@dimen/edittext_new_height"
+                            android:background="@drawable/bg_detail_container"
+                            android:gravity="center"
+
+
+                            android:padding="5dp"
+                            android:paddingBottom="2dp"
+                            android:paddingLeft="@dimen/padding_text"
+                            android:paddingRight="@dimen/padding_text"
+                            android:paddingTop="2dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_test"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_text">
+
+                    <LinearLayout
+                        android:id="@+id/layout_connectiont_ssid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_test"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_text">
+
+
+                        <com.ve.irrigation.customview.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SSID" />
+
+                        <com.ve.irrigation.customview.CustomEditTextView
+
+                            android:id="@+id/edittext_ssid"
+                            android:layout_width="100dp"
+                            android:layout_height="@dimen/edittext_new_height"
+                            android:background="@drawable/bg_detail_container"
+                            android:gravity="center"
+
+
+                            android:padding="5dp"
+                            android:paddingBottom="2dp"
+                            android:paddingLeft="@dimen/padding_text"
+                            android:paddingRight="@dimen/padding_text"
+                            android:paddingTop="2dp" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/layout_connectiont_url"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_test"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_text"
+                        android:visibility="visible">
+
+
+                        <com.ve.irrigation.customview.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="URL" />
+
+                        <com.ve.irrigation.customview.CustomEditTextView
+
+                            android:id="@+id/edittext_url"
+                            android:layout_width="100dp"
+                            android:layout_height="@dimen/edittext_new_height"
+                            android:background="@drawable/bg_detail_container"
+                            android:gravity="center"
+
+
+                            android:padding="5dp"
+                            android:paddingBottom="2dp"
+                            android:paddingLeft="@dimen/padding_text"
+                            android:paddingRight="@dimen/padding_text"
+                            android:paddingTop="2dp" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/layout_connectiont_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_test"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_text">
+
+
+                        <com.ve.irrigation.customview.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Password" />
+
+                        <com.ve.irrigation.customview.CustomEditTextView
+
+                            android:id="@+id/edittext_password"
+                            android:layout_width="100dp"
+                            android:layout_height="@dimen/edittext_new_height"
+                            android:background="@drawable/bg_detail_container"
+                            android:gravity="center"
+
+
+                            android:padding="5dp"
+                            android:paddingBottom="2dp"
+                            android:paddingLeft="@dimen/padding_text"
+                            android:paddingRight="@dimen/padding_text"
+                            android:paddingTop="2dp" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <com.ve.irrigation.customview.CustomButtonView
+                    android:id="@+id/btn_saveconnectionfinal"
+                    android:layout_width="220dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/bg_detail_container"
+                    android:padding="@dimen/padding_text"
+                    android:text="Save" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressbar_sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

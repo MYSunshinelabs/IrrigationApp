@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_hotspot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_top"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_top">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <com.ve.irrigation.customview.CustomTextView
+            android:id="@+id/textview_hotspotname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/img_editconnenction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_switch"
+            android:src="@mipmap/edit_icon" />
+
+
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/img_deleteconnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_switch"
+            android:src="@mipmap/delete_icon" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/textcolor"></View>
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data >
+        <variable
+            name="group"
+            type="com.ve.irrigation.datavalues.Group"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_group_adv_mode"
+        android:layout_margin="@dimen/marginMeduim"
+        android:padding="@dimen/marginMeduim"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/marginMeduim"
+            >
+
+            <com.ve.irrigation.customview.CustomTextViewLight
+                style="@style/AppTextView"
+                android:id="@+id/txtGroup"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:layout_height="wrap_content"
+                android:text="@{group.groupName}"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/textSizeLarg"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="@dimen/paddingMeduim"
+                android:background="@drawable/bg_valve_adv_mode"
+                >
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@mipmap/base"/>-->
+
+                <RadioButton
+                    style="@style/RadioButtonStyle"
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/colorTextSecondary"
+                    android:background="@drawable/switch_selector"
+                    android:checked="true"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginMeduim"
+            />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backgroundGroupAdvMode"
+    tools:context="com.ve.irrigation.irrigation.activities.ConfigurationScreenActivity">
+
+    <include
+        android:id="@+id/lytActionBar"
+        layout="@layout/layout_action_bar"
+
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lytActionBar"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_text"
+        android:background="@color/backgroundScreenAdvMode"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lytActionBar"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_text"
+            android:background="@drawable/bg_round_corners_stroke"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+
+                <com.ve.irrigation.customview.CustomTextView
+                    style="@style/AppTextViewAdv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/not_before_time"
+                    android:textSize="18sp" />
+
+                <com.ve.irrigation.customview.CustomTextView
+                    style="@style/AppTextViewAdv"
+                    android:id="@+id/not_before_time"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/edittext_new_height"
+                    android:layout_marginLeft="@dimen/margin_layout"
+                    android:background="@drawable/configurationtext_bg_adv_mode"
+                    android:gravity="center"
+                    android:paddingBottom="2dp"
+                    android:paddingTop="2dp"
+                    android:text="5AM"
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_layout"
+                android:gravity="center_vertical">
+
+
+                <com.ve.irrigation.customview.CustomTextView
+                    style="@style/AppTextViewAdv"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:text="@string/not_after_time" />
+
+                <com.ve.irrigation.customview.CustomTextView
+                    style="@style/AppTextViewAdv"
+                    android:id="@+id/not_after_time"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/edittext_new_height"
+                    android:layout_marginLeft="@dimen/margin_layout"
+                    android:background="@drawable/configurationtext_bg_adv_mode"
+                    android:gravity="center"
+                    android:paddingBottom="2dp"
+                    android:paddingTop="2dp"
+                    android:text="5PM" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_layout"
+                android:gravity="center_vertical">
+
+
+                <com.ve.irrigation.customview.CustomTextView
+                    style="@style/AppTextViewAdv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pump_capacity"
+                    />
+
+                <com.ve.irrigation.customview.CustomEditTextView
+                    style="@style/AppTextViewAdv"
+                    android:id="@+id/edittext_pumpcapacity"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/edittext_new_height"
+                    android:layout_marginLeft="@dimen/margin_layout"
+                    android:background="@drawable/configurationtext_bg_adv_mode"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="5dp"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="@dimen/padding_text"
+                    android:paddingRight="@dimen/padding_text"
+                    android:paddingTop="2dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_layout"
+                android:gravity="center_vertical">
+
+
+                <com.ve.irrigation.customview.CustomTextView
+                    style="@style/AppTextViewAdv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edit_valve_assignment"
+                    />
+
+
+                <ImageView
+                    android:id="@+id/imgEditableValve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/margin_top"
+                    android:src="@mipmap/mode_off" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginLarge"
+                android:gravity="center">
+
+
+                <com.ve.irrigation.customview.CustomButtonView
+                    android:id="@+id/btn_save"
+                    android:layout_width="220dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/configurationtext_bg_adv_mode"
+                    android:text="Make permanent"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_layout"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+
+
+            <com.ve.irrigation.customview.CustomTextView
+                style="@style/AppTextViewAdv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/language" />
+
+
+            <Spinner
+                android:popupBackground="@drawable/configurationtext_bg_adv_mode"
+                android:id="@+id/spinner_language"
+                android:layout_width="100dp"
+                android:layout_height="@dimen/edittext_new_height"
+                android:layout_marginLeft="@dimen/margin_layout"
+                android:background="@drawable/configurationtext_bg_adv_mode" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnValveAssignment"
+            android:text="@string/valve_assignment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/paddingLarge"
+            android:paddingRight="@dimen/paddingLarge"
+            android:layout_marginTop="@dimen/marginLarge"
+            android:textColor="@color/colorTextSecondary"
+            android:background="@drawable/configurationtext_bg_adv_mode"
+            />
+        <Button
+            android:id="@+id/btnNetworkConfig"
+            android:text="@string/network_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/paddingLarge"
+            android:paddingRight="@dimen/paddingLarge"
+            android:layout_marginTop="@dimen/marginLarge"
+            android:textColor="@color/colorTextSecondary"
+            android:background="@drawable/configurationtext_bg_adv_mode"
+            />
+        <Button
+            android:id="@+id/btnLoadDeviceFile"
+            android:text="@string/load_device_list_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/paddingLarge"
+            android:paddingRight="@dimen/paddingLarge"
+            android:layout_marginTop="@dimen/marginLarge"
+            android:textColor="@color/colorTextSecondary"
+            android:background="@drawable/configurationtext_bg_adv_mode"
+            />
+        <Button
+            android:id="@+id/btnSwitchLang"
+            android:text="@string/switch_to_english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/paddingLarge"
+            android:paddingRight="@dimen/paddingLarge"
+            android:layout_marginTop="@dimen/marginLarge"
+            android:textColor="@color/colorTextSecondary"
+            android:background="@drawable/configurationtext_bg_adv_mode"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_lock"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/margin_top"
+        android:layout_marginRight="@dimen/margin_top"
+        android:src="@mipmap/mode_off" />
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@mipmap/base"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_marginBottom="@dimen/margin_top"-->
+    <!--android:layout_marginRight="@dimen/margin_top"-->
+    <!--/>-->
+
+    <RadioButton
+        style="@style/RadioButtonStyle"
+        android:id="@+id/radioLock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/margin_top"
+        android:layout_marginRight="@dimen/margin_top"
+        android:gravity="center"
+        android:textColor="@color/colorTextSecondary"
+        android:background="@drawable/switch_selector"
+        android:checked="true"
+        />
+
+</RelativeLayout>

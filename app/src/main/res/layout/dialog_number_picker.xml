@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundScreenAdvMode"
+    android:padding="@dimen/marginMeduim"
+    >
+    <NumberPicker
+        android:id="@+id/numberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.ve.irrigation.customview.CustomTextViewLight
+        android:id="@+id/txtCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:padding="@dimen/paddingMeduim"
+        android:background="@drawable/bg_btn"
+        android:layout_marginTop="@dimen/marginLarge"
+        app:layout_constraintTop_toBottomOf="@id/numberPicker"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <com.ve.irrigation.customview.CustomTextViewLight
+        android:id="@+id/txtDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:padding="@dimen/paddingMeduim"
+        android:background="@drawable/bg_btn"
+        android:layout_marginLeft="@dimen/marginMeduim"
+        app:layout_constraintTop_toTopOf="@id/txtCancel"
+        app:layout_constraintLeft_toRightOf="@id/txtCancel"
+        />
+</android.support.constraint.ConstraintLayout>

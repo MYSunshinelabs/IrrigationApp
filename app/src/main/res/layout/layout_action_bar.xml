@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/lytNavBar"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="@dimen/marginSmall"
+    android:background="@drawable/bg_group_adv_mode"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/imgTollbarLeft"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/marginMeduim"
+        android:layout_centerVertical="true"
+
+        />
+    <ImageView
+        android:id="@+id/imgTollbarLeft2"
+        android:visibility="visible"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/imgTollbarLeft"
+        />
+    <com.ve.irrigation.customview.CustomTextViewLightBold
+        android:id="@+id/title"
+        style="@style/AppTextViewMainScr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSizeSecondary"
+        android:layout_centerInParent="true"
+        />
+
+
+    <ImageView
+        android:id="@+id/imgTollbarRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/up_down_arrow"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/marginMeduim"
+        android:visibility="gone"
+        />
+    <com.ve.irrigation.customview.CustomTextViewLightBold
+        android:id="@+id/txtMTime"
+        style="@style/AppTextViewMainScr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/marginMeduim"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="activity"
+            type="com.ve.irrigation.irrigation.activities.ControlModeActivityNew" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/backgroundValveAdvMode"
+        tools:context="com.ve.irrigation.irrigation.activities.ControlModeActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginMeduim">
+
+            <include
+                layout="@layout/layout_action_bar"/>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_gravity="right"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btnSwitchMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_detail_container"
+                android:text="Switch Mode"
+                android:paddingLeft="@dimen/paddingLarge"
+                android:paddingRight="@dimen/paddingLarge"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="@dimen/marginMeduim"
+                />
+
+            <ProgressBar
+                android:id="@+id/bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginMeduim"
+                android:layout_marginRight="@dimen/marginLargeVery"
+                android:layout_marginLeft="@dimen/marginLargeVery"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:id="@+id/lytValve1"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_group_adv_mode"
+                    android:padding="@dimen/paddingMeduim"
+                    android:layout_margin="@dimen/marginMeduim"
+                    >
+                    <com.ve.irrigation.customview.CustomTextView
+                        style="@style/AppTextViewAdv"
+                        android:gravity="left"
+                        android:text="Valve 1"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        />
+
+                    <CheckBox
+                        style="@style/RadioButtonStyle"
+                        android:id="@+id/radioValve1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorTextSecondary"
+                        android:background="@drawable/switch_selector"
+                        android:checked="true"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lytValve2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_group_adv_mode"
+                    android:padding="@dimen/paddingMeduim"
+                    android:layout_margin="@dimen/marginMeduim"
+                    >
+                    <com.ve.irrigation.customview.CustomTextView
+                        style="@style/AppTextViewAdv"
+                        android:gravity="left"
+                        android:text="Valve 2"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        />
+
+                    <CheckBox
+                        style="@style/RadioButtonStyle"
+                        android:id="@+id/radioValve2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorTextSecondary"
+                        android:background="@drawable/switch_selector"
+                        android:checked="true"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lytValve3"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_group_adv_mode"
+                    android:padding="@dimen/paddingMeduim"
+                    android:layout_margin="@dimen/marginMeduim"
+                    >
+                    <com.ve.irrigation.customview.CustomTextView
+                        style="@style/AppTextViewAdv"
+                        android:gravity="left"
+                        android:text="Valve 3"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        />
+
+                    <CheckBox
+                        style="@style/RadioButtonStyle"
+                        android:id="@+id/radioValve3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorTextSecondary"
+                        android:background="@drawable/switch_selector"
+                        android:checked="false"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lytFill"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_group_adv_mode"
+                    android:padding="@dimen/paddingMeduim"
+                    android:layout_margin="@dimen/marginMeduim"
+                    >
+                    <com.ve.irrigation.customview.CustomTextView
+                        style="@style/AppTextViewAdv"
+                        android:gravity="left"
+                        android:text="Fill"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        />
+
+                    <CheckBox
+                        style="@style/RadioButtonStyle"
+                        android:id="@+id/radioFill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorTextSecondary"
+                        android:background="@drawable/switch_selector"
+                        android:checked="true"
+
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lytMainPump"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_group_adv_mode"
+                    android:padding="@dimen/paddingMeduim"
+                    android:layout_margin="@dimen/marginMeduim"
+                    >
+                    <com.ve.irrigation.customview.CustomTextView
+                        style="@style/AppTextViewAdv"
+                        android:gravity="left"
+                        android:text="Main Pump"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        />
+
+                    <CheckBox
+                        style="@style/RadioButtonStyle"
+                        android:id="@+id/radioMainPump"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorTextSecondary"
+                        android:background="@drawable/switch_selector"
+                        android:checked="true"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lytRecircPump"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_group_adv_mode"
+                    android:padding="@dimen/paddingMeduim"
+                    android:layout_margin="@dimen/marginMeduim"
+                    >
+                    <com.ve.irrigation.customview.CustomTextView
+                        style="@style/AppTextViewAdv"
+                        android:gravity="left"
+                        android:text="Recirc Pump"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        />
+
+                    <CheckBox
+                        style="@style/RadioButtonStyle"
+                        android:id="@+id/radioRecircPump"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorTextSecondary"
+                        android:background="@drawable/switch_selector"
+                        android:checked="true"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lytMixPump"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_group_adv_mode"
+                    android:padding="@dimen/paddingMeduim"
+                    android:layout_margin="@dimen/marginMeduim"
+                    >
+                    <com.ve.irrigation.customview.CustomTextView
+                        style="@style/AppTextViewAdv"
+                        android:gravity="left"
+                        android:text="Mix Pump"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        />
+
+                    <CheckBox
+                        style="@style/RadioButtonStyle"
+                        android:id="@+id/radioMixPump"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorTextSecondary"
+                        android:background="@drawable/switch_selector"
+                        android:checked="true"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lytInjectPump"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_group_adv_mode"
+                    android:padding="@dimen/paddingMeduim"
+                    android:layout_margin="@dimen/marginMeduim"
+                    >
+                    <com.ve.irrigation.customview.CustomTextView
+                        style="@style/AppTextViewAdv"
+                        android:gravity="left"
+                        android:text="Inject Pump"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        />
+
+                    <CheckBox
+                        style="@style/RadioButtonStyle"
+                        android:id="@+id/radioInjectPump"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorTextSecondary"
+                        android:background="@drawable/switch_selector"
+                        android:checked="true"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+            <View
+                android:id="@+id/dummyView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:visibility="gone"
+                android:focusableInTouchMode="true"
+                />
+        </RelativeLayout>
+
+    </LinearLayout >
+</layout>

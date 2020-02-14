@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_hotspot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_switch"
+    android:background="@drawable/configurationtext_bg_layout"
+    android:padding="@dimen/margin_top">
+
+
+    <com.ve.irrigation.customview.CustomTextView
+        android:id="@+id/textview_hotspotname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

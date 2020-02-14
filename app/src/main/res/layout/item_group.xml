@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data >
+        <variable
+            name="adapter"
+            type="com.ve.irrigation.irrigation.adapters.GroupRecyclerAdapter"/>
+        <variable
+            name="group"
+            type="com.ve.irrigation.datavalues.Group"/>
+        <variable
+            name="schedules"
+            type="com.ve.irrigation.datavalues.Schedule[]"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/paddingMeduim"
+        android:orientation="vertical"
+        >
+        <!--&gt;-->
+
+        // Layout Group Heading Line
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginGroupLeft"
+            android:padding="@dimen/paddingSmall"
+            android:background="@drawable/roundedcorner_bg_layout_green"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/AppTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="Group : "/>
+            <TextView
+                android:id="@+id/totalReq"
+                style="@style/AppTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@{group.totalReq}"/>
+            <TextView
+                style="@style/AppTextView"
+                android:id="@+id/actual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@{group.actual}"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/btnEdit"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:text="Edit"
+                    android:layout_alignParentRight="true"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        // Layout Schedule
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:visibility="gone"
+                android:id="@+id/btnValves"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:onClick="@{}"
+                android:paddingTop="@dimen/paddingLarge"
+                android:paddingBottom="@dimen/paddingLarge"
+                android:text="Valves"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewValves"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/marginMeduim">
+                <TextView
+                    style="@style/AppTextView"
+                    android:id="@+id/txtSchedule1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:textSize="@dimen/textSizeSmall"
+                    android:paddingLeft="@dimen/paddingMeduim"
+                    android:background="@drawable/roundedcorner_bg_layout_green"
+                    android:text="@{schedules[0].getScheduleMsg}"
+                    android:drawableRight="@android:drawable/ic_menu_edit"
+                    />
+                <TextView
+                    style="@style/AppTextView"
+                    android:id="@+id/txtSchedule2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:textSize="@dimen/textSizeSmall"
+                    android:paddingLeft="@dimen/paddingMeduim"
+                    android:background="@drawable/roundedcorner_bg_layout_green"
+                    android:text="@{schedules[1].getScheduleMsg}"
+                    android:drawableRight="@android:drawable/ic_menu_edit"
+                    />
+                <TextView
+                    style="@style/AppTextView"
+                    android:id="@+id/txtSchedule3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:textSize="@dimen/textSizeSmall"
+                    android:paddingLeft="@dimen/paddingMeduim"
+                    android:background="@drawable/roundedcorner_bg_layout_green"
+                    android:text="@{schedules[2].getScheduleMsg}"
+                    android:drawableRight="@android:drawable/ic_menu_edit"
+                    />
+                <TextView
+                    style="@style/AppTextView"
+                    android:id="@+id/txtSchedule4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:textSize="@dimen/textSizeSmall"
+                    android:paddingLeft="@dimen/paddingMeduim"
+                    android:background="@drawable/roundedcorner_bg_layout_green"
+                    android:text="@{schedules[3].getScheduleMsg}"
+                    android:drawableRight="@android:drawable/ic_menu_edit"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data >
+        <variable
+            name="schedule"
+            type="com.ve.irrigation.datavalues.Schedule"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundScreenAdvMode"
+        >
+
+        <LinearLayout
+            android:id="@+id/lytScheduleOptions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3"
+            android:gravity="right"
+            android:padding="@dimen/paddingMeduim"
+            android:orientation="vertical"
+            android:layout_below="@id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/paddingMeduim"
+                android:background="@drawable/bg_group_adv_mode"
+                >
+
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    style="@style/AppTextViewMainScr"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSizeLarg"
+                    android:text="@{schedule.groupName}"
+                    android:drawableLeft="@mipmap/circle"
+                    />
+
+                <com.ve.irrigation.customview.CustomTextViewLightBold
+                    style="@style/AppTextViewMainScr"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textSizeLarg"
+                    android:text="@{schedule.scheduleName}"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/paddingMeduim"
+                android:layout_marginTop="@dimen/marginMeduim"
+                android:background="@drawable/bg_group_adv_mode"
+                android:layout_marginLeft="@dimen/marginGroupLeft"
+                android:weightSum="3"
+                >
+
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    style="@style/AppTextViewMainScr"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:text="Start time"
+                    android:gravity="left"
+                    android:layout_height="wrap_content"
+                    />
+
+                <com.ve.irrigation.customview.CustomTextViewLightBold
+                    style="@style/AppTextViewMainScr"
+                    android:id="@+id/txtStartTime"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.85"
+                    android:text="@{schedule.startTime}"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_schedule_values"
+                    />
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/lytTimePicker"
+                android:visibility="gone"
+                layout="@layout/layout_time_picker_new"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/paddingMeduim"
+                android:layout_marginTop="@dimen/marginMeduim"
+                android:background="@drawable/bg_group_adv_mode"
+                android:layout_marginLeft="@dimen/marginGroupLeft"
+                android:weightSum="3"
+                >
+
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    style="@style/AppTextViewMainScr"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:text="Duration"
+                    android:gravity="left"
+                    android:layout_height="wrap_content"
+                    />
+
+                <com.ve.irrigation.customview.CustomTextViewLightBold
+                    style="@style/AppTextViewMainScr"
+                    android:id="@+id/txtMinute"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.85"
+                    android:text="@{schedule.minutes}"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_schedule_values"
+                    />
+
+                <com.ve.irrigation.customview.CustomTextViewLightBold
+                    style="@style/AppTextViewMainScr"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.85"
+                    android:text="Min"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytDurationPicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/marginGroupLeft"
+                android:weightSum="3"
+                android:visibility="gone"
+                android:gravity="center_horizontal"
+                >
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="1dp"
+                    />
+                <include
+                    android:visibility="visible"
+                    layout="@layout/layout_number_picker"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/paddingMeduim"
+                android:layout_marginTop="@dimen/marginMeduim"
+                android:background="@drawable/bg_group_adv_mode"
+                android:layout_marginLeft="@dimen/marginGroupLeft"
+                android:weightSum="3"
+                >
+
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    style="@style/AppTextViewMainScr"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:text="End time"
+                    android:gravity="left"
+                    android:layout_height="wrap_content"
+                    />
+
+                <com.ve.irrigation.customview.CustomTextViewLightBold
+                    style="@style/AppTextViewMainScr"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.85"
+                    android:text="@{schedule.stopTime}"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/paddingMeduim"
+                android:layout_marginTop="@dimen/marginMeduim"
+                android:background="@drawable/bg_group_adv_mode"
+                android:layout_marginLeft="@dimen/marginGroupLeft"
+                android:weightSum="3"
+                >
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    style="@style/AppTextViewMainScr"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:text="Volume"
+                    android:gravity="left"
+                    android:layout_height="wrap_content"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLightBold
+                    style="@style/AppTextViewMainScr"
+                    android:id="@+id/txtVolume"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.85"
+                    android:text="@{schedule.volume}"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_schedule_values"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLightBold
+                    style="@style/AppTextViewMainScr"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.85"
+                    android:text="Litres"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytVolumePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/marginGroupLeft"
+                android:weightSum="3"
+                android:visibility="gone"
+                android:gravity="center_horizontal"
+                >
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="1dp"
+                    />
+                <include
+                    android:visibility="visible"
+                    layout="@layout/layout_number_picker"
+                    />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/paddingMeduim"
+                android:layout_marginTop="@dimen/marginMeduim"
+                android:background="@drawable/bg_group_adv_mode"
+                android:layout_marginLeft="@dimen/marginGroupLeft"
+                android:weightSum="3"
+                android:gravity="center_vertical"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/paddingSmall">
+                    <com.ve.irrigation.customview.CustomTextViewLight
+                        android:id="@+id/txtEnable24Hr"
+                        style="@style/AppTextViewMainScr"
+                        android:layout_width="wrap_content"
+                        android:text="Enable"
+                        android:gravity="left"
+                        android:padding="0dp"
+                        android:layout_height="wrap_content"
+                        />
+                    <com.ve.irrigation.customview.CustomTextViewLight
+                        style="@style/AppTextViewMainScr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24 hr"
+                        android:padding="0dp"
+                        android:textSize="@dimen/textSizeSmall"
+                        android:layout_below="@id/txtEnable24Hr"
+                        />
+                </LinearLayout>
+
+
+                <RadioButton
+                    style="@style/RadioButtonStyle"
+                    android:id="@+id/radioEnable24hr"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.85"
+                    android:layout_height="@dimen/sizeMainScrIndi"
+                    app:layout_constraintLeft_toRightOf="@id/imgNetwork"
+                    android:background="@drawable/selector_main_scr_idicator"
+                    android:checked="@{!schedule.disableToday}"
+                    android:layout_marginLeft="@dimen/marginLarge"
+                    android:layout_marginRight="@dimen/marginLarge"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/paddingMeduim"
+                android:layout_marginTop="@dimen/marginMeduim"
+                android:background="@drawable/bg_group_adv_mode"
+                android:layout_marginLeft="@dimen/marginGroupLeft"
+                android:gravity="center_vertical"
+                android:weightSum="3"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/paddingSmall">
+                    <com.ve.irrigation.customview.CustomTextViewLight
+                        android:id="@+id/txtEnablePermanently"
+                        style="@style/AppTextViewMainScr"
+                        android:layout_width="wrap_content"
+                        android:text="Enable"
+                        android:gravity="left"
+                        android:padding="0dp"
+                        android:layout_height="wrap_content"
+                        />
+                    <com.ve.irrigation.customview.CustomTextViewLight
+                        style="@style/AppTextViewMainScr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Permanently"
+                        android:padding="0dp"
+                        android:textSize="@dimen/textSizeSmall"
+                        android:layout_below="@id/txtEnable24Hr"
+                        />
+                </LinearLayout>
+
+
+                <RadioButton
+                    style="@style/RadioButtonStyle"
+                    android:id="@+id/radioEnablePermanently"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.85"
+                    android:layout_height="@dimen/sizeMainScrIndi"
+                    app:layout_constraintLeft_toRightOf="@id/imgNetwork"
+                    android:background="@drawable/selector_main_scr_idicator"
+                    android:checked="@{!schedule.disable}"
+                    android:layout_marginLeft="@dimen/marginLarge"
+                    android:layout_marginRight="@dimen/marginLarge"
+                    android:layout_centerVertical="true"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/paddingMeduim"
+                android:layout_marginTop="@dimen/marginMeduim"
+                android:background="@drawable/bg_group_adv_mode"
+                android:layout_marginLeft="@dimen/marginGroupLeft"
+                android:gravity="center_vertical"
+                android:weightSum="3"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/paddingSmall">
+                    <com.ve.irrigation.customview.CustomTextViewLight
+                        android:id="@+id/txtEnableNutrition"
+                        style="@style/AppTextViewMainScr"
+                        android:layout_width="wrap_content"
+                        android:text="Enable"
+                        android:gravity="left"
+                        android:padding="0dp"
+                        android:layout_height="wrap_content"
+                        />
+                    <com.ve.irrigation.customview.CustomTextViewLight
+                        style="@style/AppTextViewMainScr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nutrition"
+                        android:padding="0dp"
+                        android:textSize="@dimen/textSizeSmall"
+                        android:layout_below="@id/txtEnable24Hr"
+                        />
+                </LinearLayout>
+
+
+                <RadioButton
+                    style="@style/RadioButtonStyle"
+                    android:id="@+id/radioEnableNutrition"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.85"
+                    android:layout_height="@dimen/sizeMainScrIndi"
+                    app:layout_constraintLeft_toRightOf="@id/imgNetwork"
+                    android:background="@drawable/selector_main_scr_idicator"
+                    android:layout_marginLeft="@dimen/marginLarge"
+                    android:layout_marginRight="@dimen/marginLarge"
+                    android:checked="@{schedule.statusNutrition}"
+                    android:layout_centerVertical="true"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:text="SAVE"
+            android:visibility="visible"
+            android:textColor="@color/white"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedcorner_bg_layout_green"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/marginLarge"
+            android:layout_marginLeft="@dimen/marginLarge"
+            />
+
+    </RelativeLayout>
+</layout>

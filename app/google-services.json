@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "423088472575",
+    "firebase_url": "https://irrigation-30b72.firebaseio.com",
+    "project_id": "irrigation-30b72",
+    "storage_bucket": "irrigation-30b72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423088472575:android:6232a2ca651be974",
+        "android_client_info": {
+          "package_name": "com.ve.irrigation.irrigation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423088472575-qld413htmqvdnepnstq493vu7mpor1sk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ve.irrigation.irrigation",
+            "certificate_hash": "c3e359d3193ab2f45fab9eb61f7025e2667a0be3"
+          }
+        },
+        {
+          "client_id": "423088472575-964qlosr3jg89k8vud4il0v2nu9eknsu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApvcgbdQDDaihe7wDIZl7a-tU3yWq7MHI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423088472575-964qlosr3jg89k8vud4il0v2nu9eknsu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

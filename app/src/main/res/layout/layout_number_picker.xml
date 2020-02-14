@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_time_picker_btn"
+        >
+        <com.ve.irrigation.customview.CustomTextViewLightBold
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtPlus"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="+"
+            android:gravity="center"
+            android:textSize="@dimen/textSizeLargVery"
+            />
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/strokeBlack"/>
+
+        <com.ve.irrigation.customview.CustomTextViewLightBold
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtValue"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="12"
+            android:minEms="2"
+            android:textSize="@dimen/textSizeLarg"
+            android:background="@color/colorLightOrange"
+            android:layout_marginTop="0.5dp"
+            android:layout_marginBottom="0.5dp"/>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/strokeBlack"/>
+
+        <com.ve.irrigation.customview.CustomTextViewLightBold
+            style="@style/AppTextViewAdv"
+            android:id="@+id/txtMinuse"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:gravity="center"
+            android:textSize="@dimen/textSizeLargVery"
+            />
+
+    </LinearLayout>
+
+    <com.ve.irrigation.customview.CustomTextViewLight
+        style="@style/AppTextViewAdv"
+        android:id="@+id/txtSetValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set"
+        android:layout_marginLeft="@dimen/marginMeduim"
+        android:padding="@dimen/marginMeduim"
+        android:minEms="3"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_time_picker_btn"
+        android:layout_below="@id/txtAMPM"
+        />
+</LinearLayout>

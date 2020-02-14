@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background">
+
+    <!--<android.support.v4.widget.NestedScrollView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/paddingMeduim"
+        android:orientation="vertical">
+        <!--Layout Network and Communication status-->
+        <RelativeLayout
+            android:id="@+id/lytNetCommStatus"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/paddingSmall"
+            android:background="@drawable/roundedcorner_bg_layout_green">
+
+            <com.ve.irrigation.customview.CustomTextViewLight
+                android:id="@+id/txtNetCommStatus"
+                style="@style/AppEditText"
+                android:layout_centerInParent="true"
+                android:text="Net/com Status"
+                android:background="@null"/>
+            <com.ve.irrigation.customview.CustomTextViewLight
+                android:id="@+id/txtAckCount"
+                style="@style/AppEditText"
+                android:layout_above="@id/txtHeartBeatNo"
+                android:textSize="@dimen/textSizeSmall"
+                android:text="Ack Count : "
+                android:padding="0dp"
+                android:layout_marginLeft="@dimen/marginSmall"
+                android:layout_marginTop="0dp"
+                android:background="@null"/>
+
+            <com.ve.irrigation.customview.CustomTextViewLight
+                android:id="@+id/txtHeartBeatNo"
+                style="@style/AppEditText"
+                android:layout_alignParentBottom="true"
+                android:textSize="@dimen/textSizeSmall"
+                android:paddingLeft="@dimen/paddingSmall"
+                android:paddingBottom="@dimen/paddingSmall"
+                android:layout_marginLeft="@dimen/marginSmall"
+                android:padding="0dp"
+                android:text="Heart Beat : "
+                android:background="@null"/>
+            <com.ve.irrigation.customview.CustomTextViewLight
+                android:id="@+id/txtConnectedTime"
+                style="@style/AppEditText"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/textSizeSmall"
+                android:text="time"
+                android:background="@null"/>
+        </RelativeLayout>
+
+        <!--Layout Machine Status-->
+        <LinearLayout
+            android:id="@+id/lytMachineStauts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                >
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtTRunTime"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Total Run Time"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    android:background="@drawable/bg_layout_green"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtTRunTime2"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Total Run Time"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    android:background="@drawable/bg_layout_green"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtVolReq"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.25"
+                    android:text="Volume  REQ"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    android:background="@drawable/bg_layout_green"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtVolActual"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.25"
+                    android:text="Volume ACTUAL"
+                    android:background="@drawable/bg_layout_green"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_top"
+                >
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtPump"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Pump"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtPressBar"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
+                    android:text="Press Bar"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtFlowIpm"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Flow Ipm"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_top"
+                >
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtGroup1"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="G1Vol"
+                    android:visibility="invisible"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtGroup2"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="G2 Vol"
+                    android:visibility="invisible"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtGroup3"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="G3 Vol"
+                    android:visibility="invisible"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtGroup4"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="G4 Vol"
+                    android:visibility="invisible"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytGVol2line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_top"
+                >
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtGroup5"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="G5 Vol"
+                    android:visibility="invisible"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtGroup6"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="G6 Vol"
+                    android:visibility="invisible"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtGroup7"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="G7 Vol"
+                    android:visibility="invisible"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtGroup8"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="G8 Vol"
+                    android:visibility="invisible"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+            </LinearLayout>
+
+            <com.ve.irrigation.customview.CustomTextViewLight
+                android:id="@+id/txtNutrition"
+                style="@style/AppEditText"
+                android:layout_width="match_parent"
+                android:text="Nutrition Info"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginRight="@dimen/paddingSmallVery"
+                android:background="@drawable/round_corner_bg_text_green"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_top"
+                >
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtRain"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Rain"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtRainStarted"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
+                    android:text="Started"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtRainDuration"
+                    style="@style/AppEditText"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Duration"
+                    android:layout_marginRight="@dimen/paddingSmallVery"
+                    />
+            </LinearLayout>
+
+
+            <com.ve.irrigation.customview.CustomTextViewLight
+                android:id="@+id/txtClimateSensors"
+                style="@style/AppEditText"
+                android:layout_width="match_parent"
+                android:text="Climate sensors"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginRight="@dimen/paddingSmallVery"
+                android:background="@drawable/round_corner_bg_text_green"
+                />
+
+        </LinearLayout>
+
+
+        <!--Layout Network and Communication status-->
+        <RelativeLayout
+            android:id="@+id/lytNotification"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.4"
+            android:layout_marginTop="@dimen/margin_top"
+            android:background="@drawable/roundedcorner_bg_layout_green"
+            android:padding="@dimen/paddingMeduim"
+            >
+            <com.ve.irrigation.customview.CustomTextViewLight
+                android:id="@+id/txtNotification"
+                android:visibility="gone"
+                style="@style/AppEditText"
+                android:layout_centerInParent="true"
+                android:text="Notifications"
+                android:background="@null"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--</android.support.v4.widget.NestedScrollView>-->
+
+    <!--Layout Progress Bar-->
+    <RelativeLayout
+        android:id="@+id/lytBar"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:background="@color/backgroundProgressBar"
+        android:focusableInTouchMode="true">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

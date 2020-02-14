@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backgroundScreenAdvMode"
+    android:padding="@dimen/paddingMeduim"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <include
+        layout="@layout/layout_action_bar"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/marginMeduim"
+        />
+</LinearLayout>

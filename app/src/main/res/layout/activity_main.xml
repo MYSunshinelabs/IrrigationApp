@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/background" />
+
+    <LinearLayout
+
+        android:id="@+id/layout_main"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/topbgcolor"
+            android:padding="@dimen/padding_text">
+
+            <ImageView
+                android:id="@+id/img_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/exit_button" />``
+
+
+            <com.ve.irrigation.customview.CustomTextViewLightBold
+                android:id="@+id/customTextViewLightBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Status Page"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+
+            <com.ve.irrigation.customview.CustomTextViewLight
+
+                android:id="@+id/textview_connectedhotspottime"
+                android:layout_below="@id/customTextViewLightBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true" />
+
+
+            <com.ve.irrigation.customview.CustomTextViewLight
+                android:id="@+id/textView_connectedhotspotname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_exit"
+                android:layout_marginTop="@dimen/margin_top" />
+
+
+            <com.ve.irrigation.customview.CustomTextViewLight
+                android:id="@+id/textview_heartbeatcount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView_connectedhotspotname"
+                android:layout_marginTop="@dimen/margin_top" />
+
+        </RelativeLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+
+
+            android:id="@+id/recyclerview_status"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.0"
+            android:padding="@dimen/padding_text">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+        <LinearLayout
+            android:id="@+id/ll_mainview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <fragment
+                android:id="@+id/fragment_detail"
+                android:name="com.ve.irrigation.irrigation.DetailedModeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fragment_margin" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/fragment_margin"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_layout"
+                    android:layout_marginRight="@dimen/margin_layout"
+                    android:background="@drawable/ic_datail_bg"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_top"
+                        android:paddingLeft="@dimen/margin_switch"
+                        android:paddingRight="@dimen/margin_switch">
+
+                        <com.ve.irrigation.customview.CustomTextView
+                            android:id="@+id/textview_realactivity_pressure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pressure"
+                            android:textColor="@color/textcolor">
+
+                        </com.ve.irrigation.customview.CustomTextView>
+
+
+                        <com.ve.irrigation.customview.CustomTextView
+                            android:id="@+id/textview_realactivity_flow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Flow">
+
+                        </com.ve.irrigation.customview.CustomTextView>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_top"
+                        android:paddingLeft="@dimen/margin_switch"
+                        android:paddingRight="@dimen/margin_switch">
+
+
+                        <com.ve.irrigation.customview.CustomTextView
+                            android:id="@+id/textview_realactivity_realvol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Real Vol">
+
+                        </com.ve.irrigation.customview.CustomTextView>
+
+                        <com.ve.irrigation.customview.CustomTextView
+                            android:id="@+id/textview_realactivity_totalvol"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:gravity="right"
+                            android:text="Total Vol">
+
+                        </com.ve.irrigation.customview.CustomTextView>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_switch"
+                        android:layout_marginTop="@dimen/margin_top"
+
+                        android:paddingLeft="@dimen/margin_switch"
+                        android:paddingRight="@dimen/margin_switch">
+
+
+                        <com.ve.irrigation.customview.CustomTextView
+                            android:id="@+id/textview_realactivity_pump"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="pump">
+
+                        </com.ve.irrigation.customview.CustomTextView>
+
+                        <com.ve.irrigation.customview.CustomTextView
+
+                            android:id="@+id/textview_realactivity_valve"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Valve">
+
+                        </com.ve.irrigation.customview.CustomTextView>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="@dimen/margin_switch"
+                    android:background="@drawable/roundedcorner_bg_layout_green"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/padding_text">
+
+                    <com.ve.irrigation.customview.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Remote Mode" />
+
+                    <ImageView
+                        android:id="@+id/img_remote_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/mode_off" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_layout"
+                    android:layout_marginTop="@dimen/margin_layout"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/img_led"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleType="fitCenter"
+                        android:src="@mipmap/led_white" />
+
+
+                    <LinearLayout
+                        android:id="@+id/layout_blueswitch"
+
+                        android:layout_width="50dp"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_switch"
+
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_text">
+
+
+                        <ImageView
+                            android:id="@+id/img_blueswitch"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/blue_button_off" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/layout_greenwitch"
+
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_switch"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_text">
+
+
+                        <ImageView
+                            android:id="@+id/img_greenwitch"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/green_button_off" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/layout_redswitch"
+
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_switch"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_text">
+
+
+                        <ImageView
+                            android:id="@+id/img_redswitch"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/red_button_off" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <com.ve.irrigation.customview.CustomTextViewLight
+            android:id="@+id/textview_notificationactivity"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:background="@color/topbgcolor"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_text">
+
+        </com.ve.irrigation.customview.CustomTextViewLight>
+
+
+    </LinearLayout>
+
+
+    <ProgressBar
+
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
+    <com.ve.irrigation.customview.CustomTextView
+        android:id="@+id/tv_progress"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressbar"
+        android:gravity="center"
+        android:text="trying to connect"
+        android:visibility="invisible" />
+
+    <com.ve.irrigation.customview.CustomTextView
+        android:id="@+id/tv_timer"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_progress"
+        android:gravity="center"
+        android:text="seconds remaining:"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>

@@ -1,0 +1,69 @@
+1.  Android Studio 3.2.1 & 3.4.1
+2.  Kotlin 1.2.7 &
+3.  Work Manager (How to connect Activity)
+4.  Serializable / Parcable.
+5.  Type of Intent.
+6   Life Cycle Activity, Fragment and Content Provider.
+7.  Retrofit(Interceptor/okhttp)
+8.  Retrofit/Volley
+9.  Jet Pack(MVVM ,MVP)
+10. Persistance librery
+11. Which Activity method call when activity install.
+12. Serialisation
+13. JSON & Gson.
+14. Crashanylatics (Release & Production).
+15. When we add Dependencies than what sycn in android studio
+16. collection /collec
+17. Dagger
+18. What happen when we declere fragment in manifest.
+19. How to load large bitmap in adapter.
+20. Why use Asyntask and drawbacks.
+21. Fragment add/replace.
+22. Oreo changes.
+23. Kotlin extention ,inline funtion & coroutine.
+24. Launch Modes.
+25. Work Manager,forground service,alarm manager & Download manager.
+26. Nullable type.
+27. Room Annotations.
+28. Kotlin Constructor and inheritance.
+29. Application Class.
+30. Context and its type.
+31. DVM,Build Type, build process, AIDL, armb7.
+33. Kotlin thread, singleton const v/s val.
+34. Observables/ observer.
+35. Layout inflator, bundle socket connection, Rx java.
+36. Searching & shorting (bubble, selection,.....)
+37. find minimum num with o(n) complex.
+38. Single Linked list Reverse, String Reverse and reverse words,String permutation String union and intersection.
+39. Egg Drop puzzle, n Queen problem.
+40. GIT
+41. Serialisation & Aggeration,Service & intent service.
+42. Secound largest in array.
+44. how to fetch continous location of a driver.
+45. Exception handling , custom exceptions and error.
+46. lateind kotlin issue, message s.. & looper.
+47. can we create a instance for interface & abstract class.
+48. okhttp, Asyn task(multi start) ,volley and retrofit.
+49. v4,v7 meterial design.
+50. bitmap pooling.
+51. Reduce APK size, orientation change, activity onstart/oncreate.
+52. kotlin var ,val lazy, lateint , const ,apply with ,let.
+53. multithreading, fragmentstate adapter and fragment adapter.
+54. thread runnable diff, click listner implementation other ways, flavours / buildtype
+55. Junit testing, inline ,infix and extention functions, Dynamic authorization (header x-auth)
+56. Dependency injection.
+57. singleton class cloning.
+58. three largest num form given array.
+59. service to activity & vice versa.
+60. progress bar via service.
+61. Splash delay.
+62. profiler,app memory leakage.
+63. why use framelayout.
+64. shallow copy and deep copy and why string is immutable.
+65. Dagger.
+66. scrums, agile, zira, junit
+67. app deeplinking.
+68. network management in api hit.
+69. LiveData on multiple click what happen.
+70. Fragment commit and commitallowstationl.
+71.

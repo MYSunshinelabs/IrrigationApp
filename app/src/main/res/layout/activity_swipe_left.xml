@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ve.irrigation.irrigation.activities.ConfigurationScreenActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/background" />
+
+    <RelativeLayout
+        android:id="@+id/relative_tool"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/topbgcolor"
+        android:padding="@dimen/padding_text">
+
+
+        <com.ve.irrigation.customview.CustomTextViewLightBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Water Table"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@color/headertextcolor"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_watertarget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative_tool"
+        android:layout_marginLeft="@dimen/margin_top"
+        android:layout_marginTop="@dimen/margin_switch"
+        android:gravity="center_vertical">
+
+
+        <com.ve.irrigation.customview.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Water Total      "
+            android:textSize="18sp" />
+
+        <com.ve.irrigation.customview.CustomTextView
+            android:id="@+id/text_watertarget"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/edittext_new_height"
+            android:layout_marginLeft="@dimen/margin_layout"
+            android:background="@drawable/configurationtext_bg_layout"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:text=""
+
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_planned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_watertarget"
+        android:layout_marginLeft="@dimen/margin_top"
+        android:layout_marginTop="@dimen/margin_switch"
+        android:gravity="center_vertical">
+
+
+        <com.ve.irrigation.customview.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Water Planned"
+            android:textSize="18sp" />
+
+        <com.ve.irrigation.customview.CustomTextView
+            android:id="@+id/text_waterplanned"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/edittext_new_height"
+            android:layout_marginLeft="@dimen/margin_layout"
+            android:background="@drawable/configurationtext_bg_layout"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:text=""
+
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_actual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_planned"
+        android:layout_marginLeft="@dimen/margin_top"
+        android:layout_marginTop="@dimen/margin_switch"
+        android:gravity="center_vertical">
+
+
+        <com.ve.irrigation.customview.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Water Actual   "
+            android:textSize="18sp" />
+
+        <com.ve.irrigation.customview.CustomTextView
+            android:id="@+id/text_wateractual"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/edittext_new_height"
+            android:layout_marginLeft="@dimen/margin_layout"
+            android:background="@drawable/configurationtext_bg_layout"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:text=""
+
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_actual"
+        android:layout_marginBottom="@dimen/margin_top"
+        android:layout_marginLeft="@dimen/margin_top"
+        android:layout_marginRight="@dimen/margin_layout"
+        android:layout_marginTop="@dimen/margin_switch"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:background="@drawable/configurationtext_bg_layout"
+            android:padding="@dimen/padding_text">
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:id="@+id/textview_start1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start1"
+                android:textColor="@color/textcolor">
+
+            </com.ve.irrigation.customview.CustomTextView>
+
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:id="@+id/textview_end1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_switch"
+                android:gravity="right"
+                android:text="End1">
+
+            </com.ve.irrigation.customview.CustomTextView>
+
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:id="@+id/textview_vol1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_switch"
+                android:gravity="right"
+                android:text="Vol">
+
+            </com.ve.irrigation.customview.CustomTextView>
+
+            <ImageView
+                android:id="@+id/img_pump1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/margin_switch"
+                android:src="@mipmap/mode_off" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:background="@drawable/configurationtext_bg_layout"
+            android:padding="@dimen/padding_text">
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:id="@+id/textview_start2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start2"
+                android:textColor="@color/textcolor">
+
+            </com.ve.irrigation.customview.CustomTextView>
+
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:id="@+id/textview_end2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_switch"
+                android:gravity="right"
+                android:text="End2">
+
+            </com.ve.irrigation.customview.CustomTextView>
+
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:id="@+id/textview_vol2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_switch"
+                android:gravity="right"
+                android:text="Vol">
+
+            </com.ve.irrigation.customview.CustomTextView>
+
+
+            <ImageView
+                android:id="@+id/img_pump2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/margin_switch"
+                android:src="@mipmap/mode_off" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:background="@drawable/configurationtext_bg_layout"
+            android:padding="@dimen/padding_text">
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:id="@+id/textview_start3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start3"
+                android:textColor="@color/textcolor">
+
+            </com.ve.irrigation.customview.CustomTextView>
+
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:id="@+id/textview_end3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_switch"
+                android:gravity="right"
+                android:text="End3">
+
+            </com.ve.irrigation.customview.CustomTextView>
+
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:id="@+id/textview_vol3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_switch"
+                android:gravity="right"
+                android:text="Vol">
+
+            </com.ve.irrigation.customview.CustomTextView>
+
+
+            <ImageView
+                android:id="@+id/img_pump3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/margin_switch"
+                android:src="@mipmap/mode_off" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_top"
+            android:layout_marginTop="@dimen/margin_top"
+            android:background="@drawable/configurationtext_bg_layout"
+            android:padding="@dimen/padding_text">
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:id="@+id/textview_start4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start4"
+                android:textColor="@color/textcolor">
+
+            </com.ve.irrigation.customview.CustomTextView>
+
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:id="@+id/textview_end4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_switch"
+                android:gravity="right"
+                android:text="End4">
+
+            </com.ve.irrigation.customview.CustomTextView>
+
+
+            <com.ve.irrigation.customview.CustomTextView
+                android:id="@+id/textview_vol4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_switch"
+                android:gravity="right"
+                android:text="Vol">
+
+            </com.ve.irrigation.customview.CustomTextView>
+
+
+            <ImageView
+                android:id="@+id/img_pump4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/margin_switch"
+                android:src="@mipmap/mode_off" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

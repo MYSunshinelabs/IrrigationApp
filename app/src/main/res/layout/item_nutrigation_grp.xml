@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data >
+        <variable
+            name="group"
+            type="com.ve.irrigation.datavalues.Group"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_group_adv_mode"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/marginMeduim"
+        android:paddingBottom="@dimen/paddingMeduim"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/AppTextViewAdv"
+                android:id="@+id/txtGrpName"
+                android:layout_marginLeft="@dimen/marginMeduim"
+                android:textSize="@dimen/textSizePrimary"
+                android:text="@{group.groupName}"
+                />
+            <TextView
+                style="@style/AppTextViewAdv"
+                android:id="@+id/txtGrpNutrigation"
+                android:layout_marginRight="@dimen/marginMeduim"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/textSizePrimary"
+                android:text="Nutrigation"
+                />
+        </RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/marginMeduim"
+            android:layout_marginLeft="@dimen/marginMeduim"
+            />
+
+    </LinearLayout>
+
+</layout>

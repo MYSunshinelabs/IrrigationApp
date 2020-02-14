@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Irrigation</string>
+    <string name="pressure_bar">压力Bar</string>
+    <string name="flow_lpm">流量L/M</string>
+    <string name="actual">实际流量L</string>
+    <string name="Required">需水量L</string>
+    <string name="up">加</string>
+    <string name="down">减</string>
+    <string name="min">分钟</string>
+    <string name="dis_24">关24H</string>
+    <string name="dis">关</string>
+    <string name="config">网络配置</string>
+    <string name="version">1.4</string>
+    <string name="ver">版本 1.4</string>
+    <string name="set">组</string>
+    <string name="save">保存</string>
+    <string name="local_network">本地网络</string>
+    <string name="select_network">选择网络</string>
+    <string name="ssid">SSID</string>
+    <string name="password">密码</string>
+    <string name="machine_ap">机器AP</string>
+    <string name="default_mode">默认模式</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_engineering">EngineeringActivity</string>
+    <string name="title_activity_uitest">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_msg_no_network">Please check your internet connection.</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="start_time">Start Time</string>
+    <string name="minutes">Minute</string>
+    <string name="volume">Volume</string>
+    <string name="stop_time">Stop Time</string>
+    <string name="disable">Disable</string>
+    <string name="disable_today">Disable Today</string>
+    <string name="edit_valve_table">Edit Valve \n Table</string>
+    <string name="valve_assignment">阀门分配</string>
+    <string name="msg_waiting_for_response">Waiting for response.....</string>
+    <string name="msg_retry_for_connection">Retry for connection.</string>
+    <string name="msg_unable_to_connect">Unable to connect, Please try again later.</string>
+    <string name="msg_waiting_for_connectivity">Waiting for internet connectivity.....</string>
+    <string name="start">START</string>
+    <string name="stop">STOP</string>
+    <string name="liters">LITRES</string>
+    <string name="please_check_internet_connection_first">Please check internet connection first.</string>
+
+    <string name="error_msg_location">Unable to fetch location, Please try again later.</string>
+    <string name="msg_confirmation_delete">Are you sure you want to delete!</string>
+    <string name="connected">Connected</string>
+    <string name="connected_by_hotspot">Connected by Hotspot</string>
+    <string name="hotspot">Hotspot</string>
+    <string name="connected_by_local_network">Connected by local network chines.</string>
+    <string name="load_device_list_file">Load device list file</string>
+    <string name="network_config">Network Configration</string>
+    <string name="enter_ssid">Enter SSID</string>
+    <string name="set_ssid">Set SSID</string>
+    <string name="enter_pass">Enter Password</string>
+    <string name="save_to_db">Save to DB</string>
+    <string name="reset">Reset\'</string>
+    <string name="ip_add_edge_controller">IP address EDGE Controller.</string>
+    <string name="change">Change</string>
+    <string name="load_device_file">加载设备文件</string>
+    <string name="delete_device_file">删除设备文件</string>
+    <string name="switch_to_english">切换到英文</string>
+
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/background"
+    >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/topbgcolor"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        style="@style/AppTextView"
+        android:id="@+id/txtGroupDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner_bg_text_green"
+        android:layout_marginLeft="@dimen/marginMeduim"
+        android:layout_marginRight="@dimen/marginMeduim"
+        android:layout_below="@id/toolbar"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/marginSmall"
+        android:layout_marginLeft="@dimen/marginMeduim"
+        android:layout_marginRight="@dimen/marginMeduim"
+        android:layout_below="@id/txtGroupDetail"
+        />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:text="SAVE"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedcorner_bg_layout_green"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:layout_marginLeft="@dimen/marginLarge"
+        />
+
+</RelativeLayout>

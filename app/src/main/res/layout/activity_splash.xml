@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SplashActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/default_swiperight" />
+
+
+    <TextView
+        android:id="@+id/txtAppInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Irrigation with 8 valve"
+        android:layout_marginLeft="@dimen/marginMeduim"
+        android:layout_marginRight="@dimen/marginMeduim"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:textSize="@dimen/textSizeLarg"
+        android:textColor="@color/white"
+        />
+
+
+    <TextView
+        android:id="@+id/txtVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/marginSmall"
+        android:text="Current Version: 5"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/textSizeLarg"
+        android:textColor="@color/white"
+        />
+
+</RelativeLayout>

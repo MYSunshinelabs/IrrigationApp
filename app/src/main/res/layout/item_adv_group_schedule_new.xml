@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data >
+        <variable
+            name="schedule"
+            type="com.ve.irrigation.datavalues.Schedule"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_schedule_adv_mode"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/paddingMeduim"
+        android:paddingRight="@dimen/paddingMeduim"
+        android:paddingTop="@dimen/paddingSmall"
+        android:paddingBottom="@dimen/paddingSmall"
+        android:layout_marginLeft="@dimen/marginLargeVery"
+        android:layout_marginTop="@dimen/marginSmall"
+        >
+        //  Layout schedule id and status
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <com.ve.irrigation.customview.CustomTextViewLight
+                android:id="@+id/txtHintPause"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSizeSmall"
+                android:text="pause"
+                />
+            <com.ve.irrigation.customview.CustomTextViewLight
+                android:id="@+id/txtScheduleId"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <com.ve.irrigation.customview.CustomTextViewLight
+                android:id="@+id/txtHintDisable"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSizeSmall"
+                android:text="@string/disable"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/marginSmall"
+            android:layout_marginRight="@dimen/marginSmall"
+            android:layout_gravity="center_vertical">
+
+            <RadioButton
+                android:id="@+id/radioPause"
+                style="@style/RadioButtonStyle"
+                android:layout_width="@dimen/sizeScheduleInd"
+                android:layout_height="@dimen/sizeScheduleInd"
+                android:background="@drawable/schedule_status_selector"
+                android:checked="true"
+                />
+
+            <RadioButton
+                android:id="@+id/radioDisable"
+                style="@style/RadioButtonStyle"
+                android:layout_marginTop="@dimen/marginSmall"
+                android:layout_width="@dimen/sizeScheduleInd"
+                android:layout_height="@dimen/sizeScheduleInd"
+                android:background="@drawable/schedule_status_selector"
+                android:checked="false"
+                />
+
+        </LinearLayout>
+
+        //  Layout for schedule details
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            >
+            //  Layout for Titles.
+            <LinearLayout
+                android:id="@+id/lytTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                >
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtHintStart"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/start"
+                    android:textSize="@dimen/textSizeSmall"
+                    android:gravity="center"
+                    android:textColor="@color/colorTextSecondary"
+                    />
+
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtHintStop"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stop"
+                    android:textSize="@dimen/textSizeSmall"
+                    android:gravity="center"
+                    android:textColor="@color/colorTextSecondary"
+                    />
+
+                <com.ve.irrigation.customview.CustomTextViewLight
+                    android:id="@+id/txtHintLitre"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/liters"
+                    android:textSize="@dimen/textSizeSmall"
+                    android:gravity="center"
+                    android:textColor="@color/colorTextSecondary"
+                    />
+            </LinearLayout>
+
+            // Layout for START, STOP and LITRES Values
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                //  Values
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:background="@drawable/bg_schedule_values"
+                    >
+                    <com.ve.irrigation.customview.CustomTextViewLight
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@{schedule.startTime}"
+                        android:textColor="@color/colorTextSecondary"
+                        />
+
+                    <com.ve.irrigation.customview.CustomTextViewLight
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@{schedule.stopTime}"
+                        android:textColor="@color/colorTextSecondary"
+                        />
+
+                    <com.ve.irrigation.customview.CustomTextViewLight
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@{schedule.volume}"
+                        android:textColor="@color/colorTextSecondary"
+                        />
+                </LinearLayout>
+                //  Disable Layer
+                <LinearLayout
+                    android:id="@+id/lytDisable"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_schedule_values_layer"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <com.ve.irrigation.customview.CustomTextViewLight
+            android:id="@+id/txtEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/paddingMeduimLarge"
+            android:paddingRight="@dimen/paddingMeduimLarge"
+            android:paddingTop="@dimen/paddingSmall"
+            android:paddingBottom="@dimen/paddingSmall"
+            android:background="@drawable/bg_btn"
+            android:textColor="@color/colorTextSecondary"
+            android:layout_marginLeft="@dimen/marginSmall"
+            />
+
+    </LinearLayout>
+</layout>
