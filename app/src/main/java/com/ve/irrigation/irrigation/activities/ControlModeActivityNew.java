@@ -24,7 +24,6 @@ import com.ve.irrigation.utils.IrrigationGestureDetector;
 import com.ve.irrigation.utils.Preferences;
 import com.ve.irrigation.utils.Utils;
 
-
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
@@ -34,16 +33,17 @@ public class ControlModeActivityNew extends BaseActivity implements GroupStateLi
     private Button btnMode;
     private View viewDisable;
     private GestureDetectorCompat mDetector;
-    private int noGroups;
+    private int noGroups,vstate,pstate;
     private String groupValves,mode;
     private RelativeLayout lytNavBar;
     private CustomTextViewLightBold txtTitle;
     private ActivityControlModeNewBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding= DataBindingUtil.setContentView(this,R.layout.activity_control_mode_new);
+        binding= DataBindingUtil.setContentView(this, R.layout.activity_control_mode_new);
 
         Utils.setStatusBarColor(this, R.color.colorStatusBarAdvMode);
 
@@ -57,30 +57,58 @@ public class ControlModeActivityNew extends BaseActivity implements GroupStateLi
 
     private void init() {
 
+        pstate= (int) getIntent().getExtras().get("pstate");
+        vstate= (int) getIntent().getExtras().get("vstate");
         noGroups= (int) getIntent().getExtras().get("noGroups");
-
         groupValves=getIntent().getStringExtra("Valves");
-
         mode=getIntent().getStringExtra("Mode");
+
+        String valveState=Integer.toBinaryString(vstate);
+        String pumpState=Integer.toBinaryString(pstate);
+
+        while(valveState.length() !=8){
+            valveState = "0"+valveState;
+        }
+        while(pumpState.length() !=8){
+            pumpState = "0"+pumpState;
+        }
 
         mDetector=new GestureDetectorCompat(this,new IrrigationGestureDetector(this));
 
         txtTitle=findViewById(R.id.title);
-
         lytNavBar=findViewById(R.id.lytNavBar);
         btnMode=findViewById(R.id.btnSwitchMode);
         viewDisable=findViewById(R.id.dummyView);
 
         btnMode.setOnClickListener(this);
 
+        setValvePumpState(pumpState,valveState);
+
         binding.radioValve1.setOnCheckedChangeListener(this);
         binding.radioValve2.setOnCheckedChangeListener(this);
         binding.radioValve3.setOnCheckedChangeListener(this);
         binding.radioFill.setOnCheckedChangeListener(this);
+
         binding.radioMainPump.setOnCheckedChangeListener(this);
         binding.radioRecircPump.setOnCheckedChangeListener(this);
         binding.radioMixPump.setOnCheckedChangeListener(this);
         binding.radioInjectPump.setOnCheckedChangeListener(this);
+    }
+
+    private void setValvePumpState(String pumpState, String valveState) {
+        try{
+            binding.radioValve1.setChecked(Integer.parseInt(String.valueOf(valveState.charAt(0)))==0?false:true);
+            binding.radioValve2.setChecked(Integer.parseInt(String.valueOf(valveState.charAt(1)))==0?false:true);
+            binding.radioValve3.setChecked(Integer.parseInt(String.valueOf(valveState.charAt(2)))==0?false:true);
+            binding.radioFill.setChecked(Integer.parseInt(String.valueOf(valveState.charAt(3)))==0?false:true);
+            binding.radioMainPump.setChecked(Integer.parseInt(String.valueOf(pumpState.charAt(0)))==0?false:true);
+            binding.radioRecircPump.setChecked(Integer.parseInt(String.valueOf(pumpState.charAt(1)))==0?false:true);
+            binding.radioMixPump.setChecked(Integer.parseInt(String.valueOf(pumpState.charAt(2)))==0?false:true);
+            binding.radioInjectPump.setChecked(Integer.parseInt(String.valueOf(pumpState.charAt(3)))==0?false:true);
+
+        }catch (Exception e){
+
+        }
     }
 
     @Override
@@ -123,7 +151,7 @@ public class ControlModeActivityNew extends BaseActivity implements GroupStateLi
     }
 
     private void setValveStatusOnServer(int valveId,boolean status){
-        String command=status?Constants.Commands.COMMAND_V_OPEN+valveId:Constants.Commands.COMMAND_V_CLOSE+valveId;
+        String command=status? Constants.Commands.COMMAND_V_OPEN+valveId: Constants.Commands.COMMAND_V_CLOSE+valveId;
         String url="http://"+ Preferences.getHostIpAddress(this)+":"+ Constants.Connection.COMMAND_PORT_NO+ command;
         MakeHttpRequest.getMakeHttpRequest().sendRequest(url).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<String>() {
             @Override
@@ -134,8 +162,8 @@ public class ControlModeActivityNew extends BaseActivity implements GroupStateLi
     }
 
     private void setGroupStatusOnServer(String groupId,boolean status){
-        String command=status?Constants.Commands.COMMAND_G_OPEN+groupId:Constants.Commands.COMMAND_G_CLOSE+groupId;
-        String url="http://"+Preferences.getHostIpAddress(this)+":"+Constants.Connection.COMMAND_PORT_NO+command;
+        String command=status? Constants.Commands.COMMAND_G_OPEN+groupId: Constants.Commands.COMMAND_G_CLOSE+groupId;
+        String url="http://"+ Preferences.getHostIpAddress(this)+":"+ Constants.Connection.COMMAND_PORT_NO+command;
 
         MakeHttpRequest.getMakeHttpRequest().sendRequest(url).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<String>() {
             @Override
@@ -147,7 +175,7 @@ public class ControlModeActivityNew extends BaseActivity implements GroupStateLi
 
     private void setControlMode(final int modeId){
         binding.bar.setVisibility(View.VISIBLE);
-        String url="http://"+ Preferences.getHostIpAddress(this)+":"+ Constants.Connection.COMMAND_PORT_NO+Constants.Commands.COMMAND_MODE +modeId+"/";
+        String url="http://"+ Preferences.getHostIpAddress(this)+":"+ Constants.Connection.COMMAND_PORT_NO+ Constants.Commands.COMMAND_MODE +modeId+"/";
         MakeHttpRequest.getMakeHttpRequest().sendRequest(url).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<String>() {
             @Override
             public void call(String response) {
@@ -166,14 +194,13 @@ public class ControlModeActivityNew extends BaseActivity implements GroupStateLi
             case SwipeListener.SWIPE_UP:
                 Utils.printLog(TAG, "top");
                 break;
-
             case SwipeListener.SWIPE_DOWN:
                 Utils.printLog(TAG, "down");
                 break;
 
             case SwipeListener.SWIPE_LEFT:
                 Utils.printLog(TAG, "left");
-                Intent intentGroups=new Intent(ControlModeActivityNew.this,GroupsActivity.class);
+                Intent intentGroups=new Intent(ControlModeActivityNew.this, GroupsActivity.class);
                 intentGroups.putExtra("noGroups",noGroups);
                 intentGroups.putExtra("Valves",groupValves);
                 startActivity(intentGroups);
@@ -254,7 +281,7 @@ public class ControlModeActivityNew extends BaseActivity implements GroupStateLi
                 status=binding.radioFill.isChecked()==true? 1:0;
                 break;
         }
-        String url="http://"+ Preferences.getHostIpAddress(this)+":"+ Constants.Connection.COMMAND_PORT_NO+Constants.Commands.COMMAND_V_OPEN+valveId+"/"+status+"/";
+        String url="http://"+ Preferences.getHostIpAddress(this)+":"+ Constants.Connection.COMMAND_PORT_NO+ Constants.Commands.COMMAND_V_OPEN+valveId+"/"+status+"/";
         Utils.printLog(TAG,url);
         MakeHttpRequest.getMakeHttpRequest().sendRequest(url).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<String>() {
             @Override
@@ -280,7 +307,7 @@ public class ControlModeActivityNew extends BaseActivity implements GroupStateLi
                 pumpStatus=binding.radioFill.isChecked()==true? 1:0;
                 break;
         }
-        String url="http://"+ Preferences.getHostIpAddress(this)+":"+ Constants.Connection.COMMAND_PORT_NO+Constants.Commands.COMMAND_PUMP+pumpId+"/"+pumpStatus+"/";
+        String url="http://"+ Preferences.getHostIpAddress(this)+":"+ Constants.Connection.COMMAND_PORT_NO+ Constants.Commands.COMMAND_PUMP+pumpId+"/"+pumpStatus+"/";
         Utils.printLog(TAG,url);
         MakeHttpRequest.getMakeHttpRequest().sendRequest(url).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<String>() {
             @Override

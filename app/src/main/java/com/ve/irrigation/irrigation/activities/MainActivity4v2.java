@@ -1,5 +1,5 @@
 package com.ve.irrigation.irrigation.activities;
-import android.app.Activity;
+
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Build;
@@ -14,15 +14,15 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.google.gson.Gson;
-import com.ve.irrigation.datavalues.AppDataBase;
-import com.ve.irrigation.datavalues.EngineeringData;
-import com.ve.irrigation.datavalues.HeartBeat;
-import com.ve.irrigation.datavalues.MySharedPreferences;
 import com.ve.irrigation.Receiver.EspErrorListReceiver;
 import com.ve.irrigation.Receiver.EspNetCommMsgReceiver;
 import com.ve.irrigation.Receiver.EspResponseReceiver;
 import com.ve.irrigation.Receiver.NetworkConnectivityReceiver;
 import com.ve.irrigation.customview.CustomTextViewLightBold;
+import com.ve.irrigation.datavalues.AppDataBase;
+import com.ve.irrigation.datavalues.EngineeringData;
+import com.ve.irrigation.datavalues.HeartBeat;
+import com.ve.irrigation.datavalues.MySharedPreferences;
 import com.ve.irrigation.irrigation.MakeHttpRequest;
 import com.ve.irrigation.irrigation.R;
 import com.ve.irrigation.irrigation.adapters.EspErrorAdapter;
@@ -39,6 +39,7 @@ import com.ve.irrigation.utils.Preferences;
 import com.ve.irrigation.utils.Utils;
 
 import org.json.JSONObject;
+
 import java.net.DatagramSocket;
 
 import rx.android.schedulers.AndroidSchedulers;
@@ -80,7 +81,7 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding= DataBindingUtil.setContentView(this,R.layout.activity_main_4v2);
+        binding= DataBindingUtil.setContentView(this, R.layout.activity_main_4v2);
         txtMtime=binding.lytActionBar.findViewById(R.id.txtMTime);
         txtMtime.setVisibility(View.VISIBLE);
 
@@ -94,7 +95,7 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
         init();
 
         //  Set status Bar Color according to Advance mode GUI Theme
-        Utils.setStatusBarColor(this,R.color.colorStatusBarAdvMode);
+        Utils.setStatusBarColor(this, R.color.colorStatusBarAdvMode);
 
 
         new Thread(new Runnable() {
@@ -129,7 +130,7 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
     }
 
     private void init() {
-        int defaultValue=Constants.Configration.MIN_VOLUME;
+        int defaultValue= Constants.Configration.MIN_VOLUME;
         if(heartBeat!=null && !heartBeat.getEntity().equals("S0001"))
             defaultValue= Integer.parseInt(heartBeat.getMetric().getRvol());
 
@@ -141,9 +142,9 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
 
         espNetCommMsgReceiver= EspNetCommMsgReceiver.registerReceiver(this,this);
 
-        connectivityReceiver= NetworkConnectivityReceiver.registerNetworkReciver(this,MainActivity4v2.this);
+        connectivityReceiver= NetworkConnectivityReceiver.registerNetworkReciver(this, MainActivity4v2.this);
 
-        espErrorListReceiver= EspErrorListReceiver.registerReceiver(this,MainActivity4v2.this);
+        espErrorListReceiver= EspErrorListReceiver.registerReceiver(this, MainActivity4v2.this);
 
         binding.txtIpAddress.setText(Utils.getDeviceIpAddress(this));
         binding.txtNodeName.setText(Constants.Connection.PORT_NO+"");
@@ -165,15 +166,15 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(espErrorAdapter);
 
-        pId=Preferences.getProductId(this);
-        noGroups=Preferences.getNoGroups(this);
+        pId= Preferences.getProductId(this);
+        noGroups= Preferences.getNoGroups(this);
 
 //        manageUIVisibility();
     }
 
     private void manageUIVisibility(){
         try{
-            noGroups=Preferences.getNoGroups(this);
+            noGroups= Preferences.getNoGroups(this);
             for(int i=noGroups;i<8;i++) {
                 txtGVol[i].setBackgroundResource(R.drawable.bg_group_volume_disable);
             }
@@ -188,14 +189,15 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
         try{
             JSONObject jsonHB=new JSONObject(response);
             if (jsonHB.has("metric")) {
-                heartBeat = new Gson().fromJson(response, HeartBeat.class);
-                if(heartBeat.getEntity().equals("M0001")) {
+                if(jsonHB.optString("entity").equals("M0001")) {
+                    heartBeat = new Gson().fromJson(response, HeartBeat.class);
                     binding.setHeartBeat(heartBeat);
                     manageMachineTime();
                     binding.radioPumpStatus.setChecked(heartBeat.getMetric().getPstate());
                     Preferences.setRequiredVolume(this,heartBeat.getMetric().getRvol()+"");
                     Preferences.setActualVolume(this,heartBeat.getMetric().getAvol()+"");
                 }else{
+                    HeartBeat heartBeat = new Gson().fromJson(response, HeartBeat.class);
                     if (heartBeat.getMetric().getRain()==0)
                         binding.radioRain.setChecked(false);
                     else {
@@ -256,7 +258,7 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
 
     private void manageMachineTime() {
         int machineTime=heartBeat.getMetric().getTs();
-        int deviceTime=Utils.elapsedSecFromMidnight();
+        int deviceTime= Utils.elapsedSecFromMidnight();
 
         if(machineTime-deviceTime>30 ||deviceTime-machineTime>30)
             updateMachineTime(deviceTime);
@@ -341,7 +343,7 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
             } else if (!ListenESPBarodService.isListen ){
                 Utils.startHeartBeatTask(getApplicationContext());
             }
-        espResponseReceiver=EspResponseReceiver.registerReceiver(this,this);
+        espResponseReceiver= EspResponseReceiver.registerReceiver(this,this);
     }
 
     @Override
@@ -367,7 +369,7 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
             case SwipeListener.SWIPE_UP:
                 Utils.printLog(TAG, "top");
                 Intent i = new Intent(MainActivity4v2.this, ConfigurationScreenActivity.class);
-                startActivityForResult(i,Constants.RequestCode.RESTART_APP);
+                startActivityForResult(i, Constants.RequestCode.RESTART_APP);
                 overridePendingTransition(R.anim.slide_up, R.anim.slide_down);
                 break;
 
@@ -382,8 +384,11 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
                 Utils.printLog(TAG, "left");
                 Intent iLeft = new Intent(MainActivity4v2.this, ControlModeActivityNew.class);
                 iLeft.putExtra("noGroups",noGroups);
-                iLeft.putExtra("Valves",Preferences.getValveAssignment(MainActivity4v2.this));
+                iLeft.putExtra("Valves", Preferences.getValveAssignment(MainActivity4v2.this));
                 iLeft.putExtra("Mode",heartBeat.getMetric().getMode());
+                iLeft.putExtra("pstate",heartBeat.getMetric().getPstateInt());
+                iLeft.putExtra("vstate",heartBeat.getMetric().getVstate());
+
                 startActivity(iLeft);
                 overridePendingTransition(R.anim.slide_left, R.anim.slide_right);
                 break;
@@ -430,7 +435,7 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
         super.onActivityResult(requestCode, resultCode, data);
         isRestart=false;
         if (requestCode == 2018) {
-        }else if(requestCode==Constants.RequestCode.RESTART_APP && resultCode==Constants.ResultCode.RESTART_APP){
+        }else if(requestCode== Constants.RequestCode.RESTART_APP && resultCode== Constants.ResultCode.RESTART_APP){
             isRestart=true;
             Utils.restartApp(this);
         }

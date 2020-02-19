@@ -185,6 +185,9 @@ public class HeartBeat  {
             return vstate;
         }
 
+        public int getPstateInt() {
+            return pstate;
+        }
         public boolean getPstate() {
             return pstate==0? false:true;
         }
