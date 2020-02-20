@@ -19,6 +19,7 @@ import com.ve.irrigation.utils.HeartBeatTask
 import com.ve.irrigation.utils.Preferences
 import com.ve.irrigation.utils.Utils
 import org.json.JSONObject
+import java.util.*
 
 open class SplashActivity : AppCompatActivity(), EspResponseReceiver.EspResponseObserver {
 
@@ -60,6 +61,8 @@ open class SplashActivity : AppCompatActivity(), EspResponseReceiver.EspResponse
         setContentView(R.layout.activity_splash)
 
         init()
+
+        setLanguage()
 
 //        requestConfigData()
 
@@ -158,5 +161,19 @@ open class SplashActivity : AppCompatActivity(), EspResponseReceiver.EspResponse
         else
             finish();
     }
-
+    private fun setLanguage() {
+        val locale = Locale(Preferences.getLanguage(this))
+        Locale.setDefault(locale)
+        val res = resources
+        val dm = res.displayMetrics
+        val conf = res.configuration
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            conf.setLocale(Locale(Preferences.getLanguage(this))) // API 17+ only.
+        }
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            conf.setLocale(locale)
+            createConfigurationContext(conf)
+        }
+        res.updateConfiguration(conf, dm)
+    }
 }

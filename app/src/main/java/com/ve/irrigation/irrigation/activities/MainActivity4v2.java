@@ -405,8 +405,10 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
     @Override
     protected void onPause() {
         super.onPause();
-        handlerNetworkStatus.removeCallbacks(null);
-        handlerNetworkStatus=null;
+        if(handlerNetworkStatus!=null) {
+            handlerNetworkStatus.removeCallbacks(null);
+            handlerNetworkStatus = null;
+        }
         EspResponseReceiver.unregisterReceiver(espResponseReceiver,this);
 
         if (socket != null) {

@@ -1,10 +1,18 @@
 package com.ve.irrigation;
 
 import android.app.Application;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 import android.os.Handler;
+import android.util.DisplayMetrics;
 
 import com.crashlytics.android.Crashlytics;
+import com.ve.irrigation.utils.Preferences;
 import com.ve.irrigation.utils.Utils;
+
+import java.util.Locale;
+
 import io.fabric.sdk.android.Fabric;
 
 /**
@@ -21,9 +29,6 @@ public class IrrigationApp extends Application {
         Fabric.with(this, new Crashlytics());
 
         Utils.startHeartBeatTask(getApplicationContext());
-
-
-
     }
 
     @Override
@@ -43,8 +48,8 @@ public class IrrigationApp extends Application {
         }
     }
 
-//    private void setUpUnCaughtExHandler(){
-        // Setup handler for uncaught exceptions.
+    //    private void setUpUnCaughtExHandler(){
+    // Setup handler for uncaught exceptions.
 //        Thread.setDefaultUncaughtExceptionHandler (new Thread.UncaughtExceptionHandler()
 //        {
 //            @Override

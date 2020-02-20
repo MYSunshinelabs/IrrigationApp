@@ -71,7 +71,7 @@
                     <com.ve.irrigation.customview.CustomTextView
                         style="@style/AppTextViewAdv"
                         android:gravity="left"
-                        android:text="Valve 1"
+                        android:text="@string/valve_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                     <com.ve.irrigation.customview.CustomTextView
                         style="@style/AppTextViewAdv"
                         android:gravity="left"
-                        android:text="Valve 2"
+                        android:text="@string/valve_2"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -131,7 +131,7 @@
                     <com.ve.irrigation.customview.CustomTextView
                         style="@style/AppTextViewAdv"
                         android:gravity="left"
-                        android:text="Valve 3"
+                        android:text="@string/valve_3"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
                     <com.ve.irrigation.customview.CustomTextView
                         style="@style/AppTextViewAdv"
                         android:gravity="left"
-                        android:text="Fill"
+                        android:text="@string/fill"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -192,7 +192,7 @@
                     <com.ve.irrigation.customview.CustomTextView
                         style="@style/AppTextViewAdv"
                         android:gravity="left"
-                        android:text="Main Pump"
+                        android:text="@string/main_pump"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -222,7 +222,7 @@
                     <com.ve.irrigation.customview.CustomTextView
                         style="@style/AppTextViewAdv"
                         android:gravity="left"
-                        android:text="Recirc Pump"
+                        android:text="@string/recirc_pump"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -252,7 +252,7 @@
                     <com.ve.irrigation.customview.CustomTextView
                         style="@style/AppTextViewAdv"
                         android:gravity="left"
-                        android:text="Mix Pump"
+                        android:text="@string/mix_pump"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -283,7 +283,7 @@
                     <com.ve.irrigation.customview.CustomTextView
                         style="@style/AppTextViewAdv"
                         android:gravity="left"
-                        android:text="Inject Pump"
+                        android:text="@string/inject_pump"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"

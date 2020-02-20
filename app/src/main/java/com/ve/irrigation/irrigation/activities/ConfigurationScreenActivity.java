@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.view.GestureDetectorCompat;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -38,6 +40,7 @@ import com.ve.irrigation.utils.Constants;
 import com.ve.irrigation.utils.IrrigationGestureDetector;
 import com.ve.irrigation.utils.Preferences;
 import com.ve.irrigation.utils.Utils;
+import com.ve.irrigation.widget.IrrigationWidgetProvider;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -134,21 +137,6 @@ public class ConfigurationScreenActivity extends BaseActivity implements View.On
         }
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater=getMenuInflater();
-//        inflater.inflate(R.menu.configuration_menu,menu);
-//        return super.onCreateOptionsMenu(menu);
-////        return true;
-//    }
-
-//    @Override
-//    public boolean onPrepareOptionsMenu(Menu menu) {
-//        MenuItem menuItem=menu.findItem(R.id.actionValveAssignment);
-//        menuItem.setChecked(Preferences.getEditableValveAssignment(this));
-//        return super.onPrepareOptionsMenu(menu);
-//    }
-
     private void setSpinnerValues() {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.language_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -177,9 +165,9 @@ public class ConfigurationScreenActivity extends BaseActivity implements View.On
                     Preferences.setLanguage(this,"zh");
                 else
                     Preferences.setLanguage(this,"en");
-//                IrrigationWidgetProvider.isLanguageChange=true;
-//                IrrigationWidgetProvider.updateWidget(this);
-//                setLanguage();
+                IrrigationWidgetProvider.isLanguageChange=true;
+                IrrigationWidgetProvider.updateWidget(this);
+                setLanguage();
                 switchLanguage();
                 break;
             case R.id.not_before_time:
@@ -222,11 +210,11 @@ public class ConfigurationScreenActivity extends BaseActivity implements View.On
     }
 
     private void setLanguage() {
-//        if(Preferences.getLanguage(this).equals("en")) {
-//            btnSwitchLang.setText("Switch to English");
-//        }else {
-//            btnSwitchLang.setText("切换到中文");
-//        }
+        if(Preferences.getLanguage(this).equals("en")) {
+            btnSwitchLang.setText("Switch to English");
+        }else {
+            btnSwitchLang.setText("切换到中文");
+        }
     }
 
     @Override
@@ -509,16 +497,17 @@ public class ConfigurationScreenActivity extends BaseActivity implements View.On
     private void switchLanguage() {
         Locale locale = new Locale(Preferences.getLanguage(this));
         Locale.setDefault(locale);
-
         Resources res = getResources();
-        Configuration config = new Configuration(res.getConfiguration());
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
-            config.setLocale(locale);
-            createConfigurationContext(config);
-        } else {
-            config.locale = locale;
-            res.updateConfiguration(config, res.getDisplayMetrics());
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            conf.setLocale(new Locale(Preferences.getLanguage(this))); // API 17+ only.
         }
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            conf.setLocale(locale);
+            createConfigurationContext(conf);
+        }
+        res.updateConfiguration(conf, dm);
     }
 
 }

@@ -116,4 +116,14 @@
     <string name="machine_ap">Machine AP</string>
     <string name="default_mode">Default Mode</string>
     <string name="edit_valve_assignment">Edit Valve Assignment</string>
+    <string name="edit">Edit</string>
+    <string name="valve_1">Valve 1</string>
+    <string name="valve_2">Valve 2</string>
+    <string name="valve_3">Valve 3</string>
+    <string name="fill">Fill</string>
+    <string name="main_pump">Main Pump</string>
+    <string name="recirc_pump">Recirc Pump</string>
+    <string name="mix_pump">Mix Pump</string>
+    <string name="inject_pump">Inject Pump</string>
+    <string name="make_permanent">Make permanent</string>
 </resources>
