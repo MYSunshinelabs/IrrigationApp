@@ -71,7 +71,7 @@ public class EditGroupActivity extends BaseActivity implements ScheduleListener,
 
         getSupportActionBar().setTitle(group.groupName+" "+group.totalReq);
 
-//        txtGroupDetail.setText(group.groupName+" "+group.totalReq);
+//      txtGroupDetail.setText(group.groupName+" "+group.totalReq);
         txtGroupDetail.setVisibility(View.GONE);
     }
 

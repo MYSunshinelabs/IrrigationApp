@@ -116,7 +116,7 @@ public class SwipeRightActivity extends BaseActivity implements NutrigationStart
             Group group=new Group();
             group.setTotalReq("Total Req"+(i+1));
             group.setActual("Act "+(i+1));
-            group.groupName="Group "+(i+1);
+            group.groupName=getString(R.string.group)+" "+(i+1);
             group.setEnable(true);
 //            group.setValves(Utils.getGroupValves(groupValvesStr, (i+1)+""));
             groups.add(group);

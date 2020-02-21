@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.GestureDetectorCompat;
 import android.os.Bundle;
@@ -84,8 +85,6 @@ public class ConfigurationScreenActivity extends BaseActivity implements View.On
         perfomClick();
 
         registerEditTextListener();
-
-        setLanguage();
 
         updateEditableSwitch();
 
@@ -167,7 +166,6 @@ public class ConfigurationScreenActivity extends BaseActivity implements View.On
                     Preferences.setLanguage(this,"en");
                 IrrigationWidgetProvider.isLanguageChange=true;
                 IrrigationWidgetProvider.updateWidget(this);
-                setLanguage();
                 switchLanguage();
                 break;
             case R.id.not_before_time:
@@ -206,14 +204,6 @@ public class ConfigurationScreenActivity extends BaseActivity implements View.On
                 Preferences.setEditableValveAssignment(this,!Preferences.getEditableValveAssignment(this));
                 updateEditableSwitch();
                 break;
-        }
-    }
-
-    private void setLanguage() {
-        if(Preferences.getLanguage(this).equals("en")) {
-            btnSwitchLang.setText("Switch to English");
-        }else {
-            btnSwitchLang.setText("切换到中文");
         }
     }
 
@@ -508,6 +498,14 @@ public class ConfigurationScreenActivity extends BaseActivity implements View.On
             createConfigurationContext(conf);
         }
         res.updateConfiguration(conf, dm);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(getApplicationContext(),ConfigurationScreenActivity.class));
+                ConfigurationScreenActivity.this.finish();
+                Toast.makeText(getApplicationContext(),getString(R.string.msg_restart),Toast.LENGTH_LONG).show();
+            }
+        },150);
     }
 
 }

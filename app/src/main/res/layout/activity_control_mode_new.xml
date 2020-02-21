@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_detail_container"
-                android:text="Switch Mode"
+                android:text="@string/switch_mode"
                 android:paddingLeft="@dimen/paddingLarge"
                 android:paddingRight="@dimen/paddingLarge"
                 android:layout_centerHorizontal="true"

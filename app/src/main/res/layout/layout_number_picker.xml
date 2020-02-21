@@ -59,7 +59,7 @@
         android:id="@+id/txtSetValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Set"
+        android:text="@string/set"
         android:layout_marginLeft="@dimen/marginMeduim"
         android:padding="@dimen/marginMeduim"
         android:minEms="3"

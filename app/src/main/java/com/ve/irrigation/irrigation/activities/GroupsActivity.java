@@ -128,7 +128,7 @@ public class GroupsActivity extends BaseActivity implements GroupListener, Swipe
                 Group group=new Group();
                 group.setTotalReq(Preferences.getRequiredVolume(this));
                 group.setActual(Preferences.getActualVolume(this));
-                group.groupName="Group "+(i+1);
+                group.groupName=getString(R.string.group)+" "+(i+1);
                 group.setValves(Utils.getGrpEnableValves(grpValve));
                 groups.add(group);
             }

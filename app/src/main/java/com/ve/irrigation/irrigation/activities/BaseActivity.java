@@ -66,24 +66,24 @@ public class BaseActivity extends AppCompatActivity {
             CustomTextViewLightBold txtTitle=findViewById(R.id.title);
 
             if(this instanceof MainActivity4v2){
-                txtTitle.setText("Dashboard");
+                txtTitle.setText(getString(R.string.dashboard));
                 imgLeft.setImageResource(R.mipmap.up_down_arrow);
                 imgLeft2.setVisibility(View.VISIBLE);
                 imgLeft2.setImageResource(R.mipmap.left_right_arrow);
             }else if(this instanceof GroupsActivity  ){
-                txtTitle.setText("Groups");
+                txtTitle.setText(getString(R.string.groups));
                 imgLeft.setImageResource(R.mipmap.left_arrow);
             }else if(this instanceof ControlModeActivity){
                 imgLeft.setImageResource(R.mipmap.left_right_arrow);
             }else if(this instanceof ConfigurationScreenActivity){
-                txtTitle.setText("User Configuration");
+                txtTitle.setText(getString(R.string.user_configuration));
                 imgLeft.setImageResource(R.mipmap.up_down_arrow);
             }else if(this instanceof SelectDeviceActivity){
-                txtTitle.setText("Network Connection");
+                txtTitle.setText(getString(R.string.network_connection));
                 imgLeft.setImageResource(R.mipmap.up_arrow);
                 imgLeft.setRotation(180);
             }else if(this instanceof SwipeRightActivity){
-                txtTitle.setText("Nutrigator Control");
+                txtTitle.setText(getString(R.string.nutrigator_control));
                 imgLeft.setImageResource(R.mipmap.left_arrow);
 //                imgLeft.setRotation(180);
             }

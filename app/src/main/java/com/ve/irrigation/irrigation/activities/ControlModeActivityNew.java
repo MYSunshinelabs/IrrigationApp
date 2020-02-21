@@ -140,13 +140,13 @@ public class ControlModeActivityNew extends BaseActivity implements GroupStateLi
     public void toggleModeBtn(){
         if(mode!=null)
             if(mode.equals("5")) {
-                txtTitle.setText("Mode : Manual ");
+                txtTitle.setText(getString(R.string.mode_manual));
                 viewDisable.setVisibility(View.GONE);
-                btnMode.setText("Manual Off");
+                btnMode.setText(getString(R.string.manual_off));
             }else {
-                txtTitle.setText("Mode : Automatic");
+                txtTitle.setText(getString(R.string.mode_automatic));
                 viewDisable.setVisibility(View.VISIBLE);
-                btnMode.setText("Manual ON");
+                btnMode.setText(getString(R.string.manual_on));
             }
     }
 

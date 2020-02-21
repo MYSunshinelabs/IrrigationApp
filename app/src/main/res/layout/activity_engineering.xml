@@ -36,7 +36,7 @@
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:drawableLeft="@mipmap/up_arrow"
-                android:text="Engineering Page"
+                android:text="@string/title_activity_engineering"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
@@ -62,7 +62,7 @@
                 <com.ve.irrigation.customview.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Demo Mode" />
+                    android:text="@string/demo_mode" />
 
 
                 <ImageView
@@ -88,7 +88,7 @@
                 <com.ve.irrigation.customview.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Test Mode  " />
+                    android:text="@string/test_mode" />
 
 
                 <ImageView
@@ -114,7 +114,7 @@
                 <com.ve.irrigation.customview.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Debug          " />
+                    android:text="@string/debug" />
 
 
                 <Spinner
@@ -140,7 +140,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="@drawable/bg_detail_container"
                     android:padding="@dimen/padding_text"
-                    android:text="Make permanent" />
+                    android:text="@string/make_permanent" />
             </LinearLayout>
 
         </LinearLayout>
@@ -157,7 +157,7 @@
             <com.ve.irrigation.customview.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Config download link  " />
+                android:text="@string/config_link" />
 
 
             <Spinner
@@ -183,7 +183,7 @@
             <com.ve.irrigation.customview.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sync the configuration data" />
+                android:text="@string/sync_data" />
 
 
             <ImageView
@@ -213,7 +213,7 @@
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/bg_detail_container"
                 android:padding="@dimen/padding_text"
-                android:text="Edit Connection" />
+                android:text="@string/edit_connection" />
 
 
             <com.ve.irrigation.customview.CustomButtonView
@@ -226,7 +226,7 @@
                 android:layout_marginBottom="@dimen/margin_top"
                 android:background="@drawable/bg_detail_container"
                 android:padding="@dimen/padding_text"
-                android:text="Connect a local host" />
+                android:text="@string/connect_local_host" />
 
 
             <LinearLayout

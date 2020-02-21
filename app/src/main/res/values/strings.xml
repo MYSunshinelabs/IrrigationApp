@@ -44,7 +44,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_engineering">EngineeringActivity</string>
+    <string name="title_activity_engineering">Engineering Page</string>
     <string name="title_activity_uitest">Sign in</string>
 
     <!-- Strings related to login -->
@@ -92,7 +92,7 @@
     <string name="change">Change</string>
     <string name="load_device_file">Load device file</string>
     <string name="delete_device_file">Delete device file</string>
-    <string name="switch_to_english">Switch to English</string>
+    <string name="switch_to_english">切换到中文</string>
 
 
     <string name="pressure_bar">Pressure Bar</string>
@@ -126,4 +126,32 @@
     <string name="mix_pump">Mix Pump</string>
     <string name="inject_pump">Inject Pump</string>
     <string name="make_permanent">Make permanent</string>
+    <string name="pause">pause</string>
+    <string name="duration">Duration</string>
+    <string name="end_time">End time</string>
+    <string name="enable">Enable</string>
+    <string name="permanently">Permanently</string>
+    <string name="group">Group</string>
+    <string name="valve">Valve</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="groups">Groups</string>
+    <string name="user_configuration">User Configuration</string>
+    <string name="network_connection">Network Connection</string>
+    <string name="nutrigator_control">Nutrigator Control</string>
+    <string name="demo_mode">Demo Mode</string>
+    <string name="test_mode">Test Mode</string>
+    <string name="debug">Debug</string>
+    <string name="edit_connection">Edit Connection</string>
+    <string name="connect_local_host">Connect a local host</string>
+    <string name="sync_data">Sync the configuration data</string>
+    <string name="config_link">Config download link</string>
+    <string name="nutrigation">Nutrigation</string>
+    <string name="allOff">All Off</string>
+    <string name="allOn">All On</string>
+    <string name="msg_restart">For better exp, Please restart application</string>
+    <string name="switch_mode">Switch Mode</string>
+    <string name="mode_manual">Mode : Manual</string>
+    <string name="mode_automatic">Mode : Automatic</string>
+    <string name="manual_on">Manual ON</string>
+    <string name="manual_off">Manual Off</string>
 </resources>

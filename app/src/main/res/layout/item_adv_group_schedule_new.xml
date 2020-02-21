@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/textSizeSmall"
-                android:text="pause"
+                android:text="@string/pause"
                 />
             <com.ve.irrigation.customview.CustomTextViewLight
                 android:id="@+id/txtScheduleId"
@@ -189,7 +189,7 @@
             android:id="@+id/txtEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit"
+            android:text="@string/edit"
             android:layout_gravity="center"
             android:paddingLeft="@dimen/paddingMeduimLarge"
             android:paddingRight="@dimen/paddingMeduimLarge"

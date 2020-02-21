@@ -60,6 +60,7 @@ public class IrrigationWidgetProvider extends AppWidgetProvider {
         Utils.printLog(TAG,"onReceive "+intent.getAction());
         if(intent.getAction()!=null)
             switch (intent.getAction()){
+
                 case CLICK_WIFI:
                     currentSsid=getCurrentSsid(context);
                     if(Preferences.getLocalNetSSID(context).equals(currentSsid)){
@@ -68,7 +69,6 @@ public class IrrigationWidgetProvider extends AppWidgetProvider {
                         Preferences.setWifiStatus(context,WIFI_STATUS_DISCONNECTED);
                         isUiUpdateNeeded=true;
                     }else {
-
                         String ssid=Preferences.getLocalNetSSID(context);
                         if(ssid.length()<=0) {
                             ssid = "sun00";
@@ -84,14 +84,15 @@ public class IrrigationWidgetProvider extends AppWidgetProvider {
                     if(!HBWidgetTask.isListen )
                         Utils.startWidgetHBTask(context);
                     break;
+
                 case CLICK_DOWN:
                     String urlVolDwn="http://"+Preferences.getHostIpAddress(context)+":"+ Constants.Connection.COMMAND_PORT_NO+"/R/voldn/20";
                     reflectOnChanges(urlVolDwn);
 
                     if(!HBWidgetTask.isListen )
                         Utils.startWidgetHBTask(context);
-
                     break;
+
                 case CLICK_DIS:
                     int staus=Preferences.getDisForeverStatus(context);
                     if(staus==0)
@@ -103,6 +104,7 @@ public class IrrigationWidgetProvider extends AppWidgetProvider {
                     reflectOnChanges(urlDis);
                     isUiUpdateNeeded=true;
                     break;
+
                 case CLICK_DIS24:
 
                     int staus24=Preferences.getDis24HStatus(context);

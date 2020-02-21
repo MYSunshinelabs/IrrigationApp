@@ -30,7 +30,7 @@
                 android:layout_marginRight="@dimen/marginMeduim"
                 android:layout_alignParentRight="true"
                 android:textSize="@dimen/textSizePrimary"
-                android:text="Nutrigation"
+                android:text="@string/nutrigation"
                 />
         </RelativeLayout>
         <android.support.v7.widget.RecyclerView

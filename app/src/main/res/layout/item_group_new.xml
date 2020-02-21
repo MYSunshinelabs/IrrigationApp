@@ -62,7 +62,7 @@
                                 style="@style/AppTextView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="ACTUAL"
+                                android:text="@string/actual"
                                 android:textSize="@dimen/textSizeSmall"
                                 android:textColor="@color/colorTextSecondary"/>
                             <com.ve.irrigation.customview.CustomTextViewLightBold
@@ -86,7 +86,7 @@
                                 android:layout_height="wrap_content"
                                 android:textSize="@dimen/textSizeSmall"
                                 android:textColor="@color/colorTextSecondary"
-                                android:text="REQUIRED"/>
+                                android:text="@string/Required"/>
                             <com.ve.irrigation.customview.CustomTextViewLightBold
                                 style="@style/AppTextView"
                                 android:id="@+id/txtTotalReq"
@@ -122,7 +122,7 @@
                                 android:paddingTop="@dimen/paddingSmall"
                                 android:paddingRight="@dimen/paddingMeduimLarge"
                                 android:paddingBottom="@dimen/paddingSmall"
-                                android:text="Edit"
+                                android:text="@string/edit"
                                 android:textColor="@color/colorTextSecondary" />
 
                         </LinearLayout>

@@ -59,13 +59,14 @@
                 android:id="@+id/cbAllOff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="All Off"/>
+                android:text="@string/allOff"
+                />
             <CheckBox
                 android:id="@+id/cbAllON"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:text="All On"
+                android:text="@string/allOn"
                 />
 
         </LinearLayout>
