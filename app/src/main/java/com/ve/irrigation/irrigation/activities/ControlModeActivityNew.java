@@ -56,7 +56,6 @@ public class ControlModeActivityNew extends BaseActivity implements GroupStateLi
     }
 
     private void init() {
-
         pstate= (int) getIntent().getExtras().get("pstate");
         vstate= (int) getIntent().getExtras().get("vstate");
         noGroups= (int) getIntent().getExtras().get("noGroups");
@@ -105,7 +104,6 @@ public class ControlModeActivityNew extends BaseActivity implements GroupStateLi
             binding.radioRecircPump.setChecked(Integer.parseInt(String.valueOf(pumpState.charAt(1)))==0?false:true);
             binding.radioMixPump.setChecked(Integer.parseInt(String.valueOf(pumpState.charAt(2)))==0?false:true);
             binding.radioInjectPump.setChecked(Integer.parseInt(String.valueOf(pumpState.charAt(3)))==0?false:true);
-
         }catch (Exception e){
 
         }

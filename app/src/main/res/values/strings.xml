@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Irrigation</string>
     <string name="appbar_scrolling_view_behavior">true</string>
     <string name="not_before_time">Not before time</string>

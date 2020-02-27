@@ -265,6 +265,7 @@
                     android:layout_height="@dimen/sizeMainScrIndi"
                     android:layout_marginLeft="@dimen/marginLarge"
                     style="@style/RadioButtonStyle"
+                    android:checked="true"
                     app:layout_constraintLeft_toRightOf="@id/imgSetting"
                     android:background="@drawable/selector_main_scr_idicator"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -501,7 +502,7 @@
                     android:background="@drawable/selector_main_scr_idicator"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@id/imgCloud"
-                    android:checked="false"
+                    android:checked="true"
                     />
 
                 <LinearLayout
@@ -581,7 +582,7 @@
                     android:background="@drawable/selector_main_scr_idicator"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@id/imgTemperature"
-                    android:checked="false"
+                    android:checked="true"
                     />
 
                 <LinearLayout

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Irrigation</string>
+    <string name="appbar_scrolling_view_behavior">true</string>
     <string name="pressure_bar">压力Bar</string>
     <string name="flow_lpm">流量L/M</string>
     <string name="actual">实际流量L</string>
@@ -23,6 +25,7 @@
     <string name="default_mode">默认模式</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_uitest">登录</string>
+
     <!-- Strings related to login -->
 
     <string name="title_activity_engineering">工程页面</string>
@@ -80,8 +83,6 @@
     <string name="recirc_pump">循环泵</string>
     <string name="mix_pump">混合泵</string>
     <string name="inject_pump">注入泵</string>
-
-
     <string name="not_before_time">没时间</string>
     <string name="not_after_time">没时间</string>
     <string name="language">语言</string>
@@ -90,14 +91,12 @@
     <string name="mode">模式</string>
     <string name="make_permanent">设为永久</string>
     <string name="pause">暂停</string>
-
     <string name="duration">持续时间</string>
     <string name="end_time">时间结束</string>
     <string name="enable">启用</string>
     <string name="permanently">永久性</string>
     <string name="group">组</string>
     <string name="valve">阀</string>
-
     <string name="dashboard">仪表板</string>
     <string name="groups">团体</string>
     <string name="user_configuration">用户配置</string>
@@ -119,4 +118,5 @@
     <string name="mode_automatic">模式：自动</string>
     <string name="manual_off">手动关闭</string>
     <string name="manual_on">手动开启</string>
+
 </resources>

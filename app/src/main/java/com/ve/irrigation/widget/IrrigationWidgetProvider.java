@@ -20,7 +20,6 @@ import com.ve.irrigation.utils.HBWidgetTask;
 import com.ve.irrigation.utils.Preferences;
 import com.ve.irrigation.utils.Utils;
 import com.ve.irrigation.utils.WifiHelper;
-
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
@@ -122,8 +121,8 @@ public class IrrigationWidgetProvider extends AppWidgetProvider {
 
                     if(Preferences.getLastConnectTryTime(context)<10)
                         return;
-
                     isUiUpdateNeeded=true;
+
                     Utils.printLog("ACTION_WIFI_ALARAM", System.currentTimeMillis()+"");
                     currentSsid= getCurrentSsid(context);
 
@@ -136,7 +135,6 @@ public class IrrigationWidgetProvider extends AppWidgetProvider {
                         Preferences.setWifiStatus(context,WIFI_STATUS_DISCONNECTED);
                         Preferences.setLastConnectTryTime(context, System.currentTimeMillis());
                     }
-
                     break;
             }
         else
@@ -144,6 +142,8 @@ public class IrrigationWidgetProvider extends AppWidgetProvider {
 
         if (isUiUpdateNeeded)
             onUpdate(context, AppWidgetManager.getInstance(context), AppWidgetManager.getInstance(context).getAppWidgetIds(new ComponentName(context, IrrigationWidgetProvider.class)));
+        else if(!HBWidgetTask.isListen )
+            Utils.startWidgetHBTask(context);
     }
 
     @SuppressLint("MissingPermission")
@@ -151,6 +151,7 @@ public class IrrigationWidgetProvider extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
         Utils.printLog(TAG,"onUpdate");
+
         if(Preferences.getLastConnectTryTime(context)>10) {
             String ssid=Preferences.getLocalNetSSID(context);
             WifiHelper.connectToRetry(context,ssid, Preferences.getLocalNetPass(context));

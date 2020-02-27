@@ -1,18 +1,9 @@
 package com.ve.irrigation;
 
 import android.app.Application;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.os.Build;
 import android.os.Handler;
-import android.util.DisplayMetrics;
-
 import com.crashlytics.android.Crashlytics;
-import com.ve.irrigation.utils.Preferences;
 import com.ve.irrigation.utils.Utils;
-
-import java.util.Locale;
-
 import io.fabric.sdk.android.Fabric;
 
 /**
@@ -47,25 +38,6 @@ public class IrrigationApp extends Application {
             },1000);
         }
     }
-
-    //    private void setUpUnCaughtExHandler(){
-    // Setup handler for uncaught exceptions.
-//        Thread.setDefaultUncaughtExceptionHandler (new Thread.UncaughtExceptionHandler()
-//        {
-//            @Override
-//            public void uncaughtException (Thread thread, Throwable e)
-//            {
-//                e.printStackTrace();
-//                String log= Utils.getExeptionLog(getApplicationContext());
-//                Preferences.setExeptionLog(getApplicationContext(),log);
-////                String log=e.getLocalizedMessage()+"\n"+e.getMessage()+"\n Stack Trace" +e.getStackTrace().toString();
-////                if(log!=null)
-////                    Utils.sendLog(log,getApplicationContext());
-//
-//                System.exit(1); // kill off the crashed app
-//            }
-//        });
-//    }
 
 
 }

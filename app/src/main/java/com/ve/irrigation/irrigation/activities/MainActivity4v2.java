@@ -89,7 +89,6 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
         if(heartBeat!=null) {
             HeartBeatTask.countHB=0;
             binding.setHeartBeat(heartBeat);
-            updateSenserIndicator(heartBeat);
         }
 
         init();
@@ -169,7 +168,6 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
         pId= Preferences.getProductId(this);
         noGroups= Preferences.getNoGroups(this);
 
-//        manageUIVisibility();
     }
 
     private void manageUIVisibility(){
@@ -211,7 +209,7 @@ public class MainActivity4v2 extends BaseActivity implements EspResponseReceiver
                     binding.txtParcentage.setText(heartBeat.getMetric().getBp()+"");
                     binding.txtadf.setText(heartBeat.getMetric().getLight()+"");
                     binding.txtHD.setText(heartBeat.getMetric().getRh()+"");
-                    binding.radioTemperature.setChecked(true);
+                    binding.radioTemperature.setChecked(false); // Due to senser information is not correct that's why led is RED
                 }
 
                 setStatusHandler();

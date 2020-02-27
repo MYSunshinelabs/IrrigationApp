@@ -270,14 +270,6 @@ public class Preferences {
 
 
 
-
-
-
-
-
-
-
-
     public static void setDisForeverStatus(Context context, int noValves){
         SharedPreferences mSharedPreferences = context.getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         mSharedPreferences.edit().putInt("disForeverStatus",noValves).commit();
